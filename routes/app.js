@@ -5,10 +5,14 @@
  * Assignment 1: Static API
  *
  */
-module.exports = function(express){
+module.exports = (express)=>{
     var router = express.Router()
-    router.get('/', function(req, res){
+    router.get('/', (req, res)=>{
         res.json({hello:'world'})
+    })
+
+    router.post('/',(req, res)=>{
+        res.send(req.body)
     })
     return router
 }
