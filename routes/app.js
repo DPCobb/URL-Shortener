@@ -5,6 +5,8 @@
  * Assignment 1: Static API
  *
  */
+
+const short = require('../modules/shortener.js')
 module.exports = (express)=>{
     var router = express.Router()
     router.get('/', (req, res)=>{
@@ -12,7 +14,7 @@ module.exports = (express)=>{
     })
 
     router.post('/',(req, res)=>{
-        res.send(req.body)
+        res.send(short(req))
     })
     return router
 }
