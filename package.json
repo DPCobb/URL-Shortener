@@ -1,0 +1,11 @@
+{
+  "name": "url-shortener",
+  "version": "1.0.0",
+  "description": "A Node URL Shortener",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Cobb",
+  "license": "ISC"
+}
