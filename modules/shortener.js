@@ -12,7 +12,7 @@ module.exports = (url) => {
     const crypto = require('crypto');
     const hash = crypto.createHmac('sha256', url)
                    .digest('hex');
-    url = hash.substr(0,6)
+    url = hash.substr(0,7)
     var short = prefix + url
 
     console.log(short)
