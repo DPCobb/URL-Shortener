@@ -7,3 +7,7 @@
  */
 
 const db = require('./db.js')
+
+exports.create = (data) => {
+    db.lastUrl.create(data)
+}

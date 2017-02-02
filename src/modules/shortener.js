@@ -13,5 +13,10 @@ module.exports = (url, res) => {
     const hash = crypto.createHmac('sha256', url).digest('hex');
     url = hash.substr(0,7)
     var shortUrl = prefix + url
+    var data = {
+        "url": url,
+        "tynyUrl": shortUrl
+    }
+    lastUrl.create(data)
     res.json({shortUrl: shortUrl})
 }

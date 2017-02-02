@@ -7,9 +7,8 @@
  */
 
 const short = require('../modules/shortener.js')
-
+const lastUrl = require('../models/lastUrl.js')
 module.exports = (express)=>{
-    var lastUrl = "You haven't created any URLs yet.";
     var router = express.Router()
     router.get('/urls', (req, res)=>{
         res.json({lastCreated: lastUrl})

@@ -28,7 +28,7 @@ const lastUrl = sequelize.define('url',{
         type:Sequelize.INTEGER,
         autoIncrement: true,
         primaryKey: true,
-    }
+    },
     tynyUrl:{
         type: Sequelize.STRING,
     }
