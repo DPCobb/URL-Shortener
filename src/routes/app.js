@@ -11,7 +11,10 @@ const lastUrl = require('../models/lastUrl.js')
 module.exports = (express)=>{
     var router = express.Router()
     router.get('/urls', (req, res)=>{
-        res.json({lastCreated: lastUrl})
+        lastUrl.findOne((url)=>{
+            res.json(url)
+        })
+        //res.json({lastCreated: lastUrl})
     })
 
     router.post('/urls',(req, res)=>{
