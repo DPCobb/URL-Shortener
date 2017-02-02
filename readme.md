@@ -11,17 +11,28 @@ A node.js url shortener API.
 To install this app download or clone the repository and install the required
 packages for the project.
 
-```sh
+```
 $ npm install express --save
 $ npm install body-parser --save
 $ npm install sequelizer --save
 $ npm install mysql --save
+$ npm install dotenv --save-dev
 ```
 Or install required packages at once using
 
-```sh
+```
 $ npm install
 
+```
+
+Next create your local database and add a .env file with the following fields:
+```
+DB_NAME = YOUR DATABASE NAME
+DB_USER = YOUR USER NAME
+DB_PASS = YOUR PASSWORD
+DB_HOST = YOUR HOST
+DB_SCHEMA = mysql
+DB_PORT = MYSQL PORT
 ```
 ## API Endpoints
 The following endpoints are available through the API:
