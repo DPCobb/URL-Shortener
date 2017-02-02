@@ -19,3 +19,22 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
     },
     logging:false,
 })
+
+const lastUrl = sequelize.define('url',{
+    url: {
+        type: Sequelize.STRING,
+    },
+    id: {
+        type:Sequelize.INTEGER,
+        autoIncrement: true,
+        primaryKey: true,
+    }
+    tynyUrl:{
+        type: Sequelize.STRING,
+    }
+})
+
+sequelize.sync()
+
+exports.sequelize = sequelize
+exports.user = lastUrl
