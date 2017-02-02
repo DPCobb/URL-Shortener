@@ -15,7 +15,7 @@ app.use(body_parser.urlencoded({
     extended:true
 }))
 
-app.use('/api/v1/', require('../routes/app.js')(express))
+app.use('/api/v1/', require('./routes/app.js')(express))
 
 app.listen(3000, () => {
     console.log('Hello World.')
