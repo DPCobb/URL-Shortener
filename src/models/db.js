@@ -37,4 +37,4 @@ const lastUrl = sequelize.define('url',{
 sequelize.sync()
 
 exports.sequelize = sequelize
-exports.user = lastUrl
+exports.lastUrl = lastUrl

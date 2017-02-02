@@ -5,16 +5,16 @@
  * Assignment 1: Static API
  *
  */
-
 module.exports = (url, res) => {
+    const lastUrl = require('../models/lastUrl.js')
     var prefix = 'tyny.io/'
-    var url = url.body.url
+    var urlHash = url.body.url
     const crypto = require('crypto');
-    const hash = crypto.createHmac('sha256', url).digest('hex');
-    url = hash.substr(0,7)
-    var shortUrl = prefix + url
+    const hash = crypto.createHmac('sha256', urlHash).digest('hex');
+    urlHash = hash.substr(0,7)
+    var shortUrl = prefix + urlHash
     var data = {
-        "url": url,
+        "url": url.body.url,
         "tynyUrl": shortUrl
     }
     lastUrl.create(data)
