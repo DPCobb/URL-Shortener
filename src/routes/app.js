@@ -13,7 +13,7 @@ const lastUrl = require('../models/lastUrl.js')
 // export the router
 module.exports = (express)=>{
     // call router method
-    var router = express.Router()
+    let router = express.Router()
     // get /api/v1/urls returns the last url created
     router.get('/urls', (req, res)=>{
         // find the last url created

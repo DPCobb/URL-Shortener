@@ -7,10 +7,10 @@
  */
 
 // require express and body-parser
-var express = require('express')
-var body_parser = require('body-parser')
+let express = require('express')
+let body_parser = require('body-parser')
 // instantiate express
-var app = express()
+let app = express()
 
 // set up app to use body-parser
 app.use(body_parser.json())
