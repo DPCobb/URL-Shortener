@@ -19,16 +19,16 @@ $ npm install mysql --save
 Or install required packages at once using
 
 ```sh
-$ npm install 
+$ npm install
 
 ```
 ## API Endpoints
 The following endpoints are available through the API:
-* POST -  /api/v1/urls - creates a shortened url
-* GET - /api/v1/urls - retrieves the last created short url
+* POST -  /api/v1/urls - creates a shortened URL
+* GET - /api/v1/urls - retrieves the last created short URL
 
 ## POST Requests
-To shorten a url make a POST request to /api/v1/urls and send a JSON request with the URL
+To shorten a URL make a POST request to /api/v1/urls and send a JSON request with the URL
 you want to shorten. Example:
 ```
 {
