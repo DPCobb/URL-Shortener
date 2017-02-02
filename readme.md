@@ -4,6 +4,7 @@ A node.js url shortener API.
 - [API Endpoints](#api-endpoints)
 - [Post Requests](#post-requests)
 - [Get Requests](#get-requests)
+- [Contributing](#contributing)
 
 ## Install
 
@@ -55,3 +56,11 @@ Sending a GET request to /api/v1/urls will return the following JSON response:
 }
 ```
 This GET request will respond with the information for the last created short URL.
+
+## Contributing
+To contribute to this project please [create a new pull request](https://help.github.com/articles/creating-a-pull-request/). Additionally,
+the following requirements should be met:
+* A good description of the pull request, what it is and why it is needed.
+* If creating a new feature please update the readme.md file with documentation
+including endpoints and examples.
+* Lastly, try to keep the coding style similar to the existing API.
