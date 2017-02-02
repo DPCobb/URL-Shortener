@@ -28,5 +28,6 @@ module.exports = (url, res) => {
     // add the created url to the db
     lastUrl.create(data)
     // send a json response with the shortened url
+    // Static output not dependant on DB
     res.json({shortUrl: shortUrl})
 }
