@@ -19,7 +19,7 @@ $ npm install mysql --save
 Or install required packages at once using
 
 ```sh
-$ npm install .
+$ npm install 
 
 ```
 ## API Endpoints
