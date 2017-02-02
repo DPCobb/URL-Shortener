@@ -1,9 +1,9 @@
 # Tyny
 A node.js url shortener API.
-[Install](#install)
-[API Endpoints](#api-endpoints)
-[Post Requests](#post-requests)
-[Get Requests](#get-requests)
+- [Install](#install)
+- [API Endpoints](#api-endpoints)
+- [Post Requests](#post-requests)
+- [Get Requests](#get-requests)
 
 ## Install
 
@@ -28,7 +28,7 @@ The following endpoints are available through the API:
 * GET - /api/v1/urls - retrieves the last created short url
 
 ## POST Requests
-To shorten a url make a POST to /api/v1/urls and send a JSON request with the URL
+To shorten a url make a POST request to /api/v1/urls and send a JSON request with the URL
 you want to shorten. Example:
 ```
 {
