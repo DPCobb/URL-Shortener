@@ -29,3 +29,14 @@ exports.findOne = (req, data) => {
 exports.findAll = (data) => {
     db.url.findAll().then(data)
 }
+exports.destroy = (req, data) => {
+    db.url.destroy({
+        where:{
+            id:req.id
+        },
+        include:[{
+            all:true,
+            nested:true
+        }]
+    }).then(data)
+}
