@@ -33,6 +33,13 @@ module.exports = (express)=>{
     })
     // post /api/v1/urls creates a new shortened link
     router.post('/urls',(req, res)=>{
+        let shortUrl = short(req)
+        res.json(shortUrl)
+        url.create(shortUrl)
+    })
+
+    router.post('/urls/:id',(req, res)=>{
+        req.body.id = req.param.id
         // send the req, res to shortener
         res.send(short(req, res))
     })

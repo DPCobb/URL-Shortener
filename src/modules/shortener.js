@@ -25,9 +25,6 @@ module.exports = (url, res) => {
         "url": url.body.url,
         "tynyUrl": shortUrl
     }
-    // add the created url to the db
-    saveUrl.create(data)
-    // send a json response with the shortened url
-    // Static output not dependant on DB
-    res.json({shortUrl: shortUrl})
+    
+    return(data)
 }
