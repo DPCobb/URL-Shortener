@@ -56,3 +56,13 @@ exports.destroy = (req, data, err) => {
         }]
     }).then(data).catch(err)
 }
+
+exports.update = (data, err, success) => {
+    db.url.find({
+        where:{
+            id:data.id
+        }
+    }).then( (urlData)=>{
+        urlData.updateAttributes(data).then(success).catch(err)
+    }).catch(err)
+}

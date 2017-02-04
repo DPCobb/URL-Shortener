@@ -49,9 +49,12 @@ module.exports = (express)=>{
 
     // update url by ID
     router.post('/urls/:id',(req, res)=>{
-        req.body.id = req.param.id
-        let shortUrl = short(req)
-        url.update(shortUrl, req)
+        req.body.id = req.params.id
+        url.update(req.body, (err)=>{
+            res.json(err)
+        }, (data)=>{
+            res.json(data)
+        })
     })
     // return the router
     return router
