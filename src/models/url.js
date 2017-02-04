@@ -26,9 +26,12 @@ exports.findOne = (req, data, err) => {
     }).then(data).catch(err)
 }
 
+// finds all urls
 exports.findAll = (data, err) => {
     db.url.findAll().then(data).catch(err)
 }
+
+// deletes a url by id
 exports.destroy = (req, data, err) => {
     db.url.destroy({
         where:{
