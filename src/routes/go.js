@@ -25,5 +25,22 @@ module.exports = (express)=>{
             }
         })
     })
+
+    router.get('/:prefix/:url', (req, res)=>{
+        // get all urls
+        req.body.id = req.params.url
+        console.log('test ' + req.body.id)
+        // get one url back by ud
+        url.findOneUrl(req.body,(data)=>{
+            //return the json info for the requested url
+            let target = data.url
+            if(target.includes('http') || target.includes('https')){
+                res.redirect(target)
+            }
+            else{
+                res.redirect('http://'+target)
+            }
+        })
+    })
     return router
 }

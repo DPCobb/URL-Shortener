@@ -26,6 +26,18 @@ exports.findOne = (req, data, err) => {
     }).then(data).catch(err)
 }
 
+exports.findOneUrl = (req, data, err) => {
+    db.url.find({
+        where:{
+            shortUrl:req.id
+        },
+        include:[{
+            all:true,
+            nested:true
+        }]
+    }).then(data).catch(err)
+}
+
 // finds all urls
 exports.findAll = (data, err) => {
     db.url.findAll().then(data).catch(err)

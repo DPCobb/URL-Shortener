@@ -23,8 +23,9 @@ module.exports = (url, res) => {
     // create data to send to lastUrl model
     let data = {
         "url": url.body.url,
-        "tynyUrl": shortUrl
+        "tynyUrl": shortUrl,
+        "shortUrl": urlHash
     }
-    
+
     return(data)
 }

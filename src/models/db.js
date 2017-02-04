@@ -39,6 +39,9 @@ const createUrl = sequelize.define('url',{
     // tyny url is shortened url
     tynyUrl:{
         type: Sequelize.STRING,
+    },
+    shortUrl:{
+        type: Sequelize.STRING,
     }
 })
 
