@@ -20,8 +20,10 @@ module.exports = (express)=>{
         // get all urls
         url.findAll((data)=>{
             //return the json info for the last url
-            res.json(data)
-        })
+            res.status(200).json(data)
+        }), (err) =>{
+            res.status(500).json(data)
+        }
     })
     // get url by id
     router.get('/urls/:id', (req, res)=>{
@@ -29,21 +31,25 @@ module.exports = (express)=>{
         // get one url back by ud
         url.findOne(req.body,(data)=>{
             //return the json info for the requested url
-            res.json(data)
-        })
+            res.status(200).json(data)
+        }), (err) =>{
+            res.status(500).json(data)
+        }
     })
     router.delete('/urls/:id', (req, res)=>{
         req.body.id = req.params.id
         // get one url back by ud
         url.destroy(req.body,(data)=>{
             //return the json info for the requested url
-            res.json(data)
-        })
+            res.status(200).json(data)
+        }), (err) =>{
+            res.status(500).json(data)
+        }
     })
     // post /api/v1/urls creates a new shortened link
     router.post('/urls',(req, res)=>{
         let shortUrl = short(req)
-        res.json(shortUrl)
+        res.status(200).json(shortUrl)
         url.create(shortUrl)
     })
 
@@ -51,9 +57,9 @@ module.exports = (express)=>{
     router.post('/urls/:id',(req, res)=>{
         req.body.id = req.params.id
         url.update(req.body, (err)=>{
-            res.json(err)
+            res.status(500).json(err)
         }, (data)=>{
-            res.json(data)
+            res.status(200).json(data)
         })
     })
     // return the router
