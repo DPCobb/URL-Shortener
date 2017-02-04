@@ -10,11 +10,11 @@
 const db = require('./db.js')
 
 // create a new db entry in urls table
-exports.create = (data) => {
-    db.url.create(data)
+exports.create = (data, success, err) => {
+    db.url.create(data).then(success).catch(err)
 }
 // find the last entry in the urls table
-exports.findOne = (req, data) => {
+exports.findOne = (req, data, err) => {
     db.url.find({
         where:{
             id:req.id
@@ -23,13 +23,13 @@ exports.findOne = (req, data) => {
             all:true,
             nested:true
         }]
-    }).then(data)
+    }).then(data).catch(err)
 }
 
-exports.findAll = (data) => {
-    db.url.findAll().then(data)
+exports.findAll = (data, err) => {
+    db.url.findAll().then(data).catch(err)
 }
-exports.destroy = (req, data) => {
+exports.destroy = (req, data, err) => {
     db.url.destroy({
         where:{
             id:req.id
@@ -38,5 +38,5 @@ exports.destroy = (req, data) => {
             all:true,
             nested:true
         }]
-    }).then(data)
+    }).then(data).catch(err)
 }
