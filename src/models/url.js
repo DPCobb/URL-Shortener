@@ -14,9 +14,16 @@ exports.create = (data) => {
     db.url.create(data)
 }
 // find the last entry in the urls table
-exports.findOne = (data) => {
-    // find by id desc.
-    db.url.findOne({where:{id:data}}).then(data)
+exports.findOne = (req, data) => {
+    db.url.find({
+        where:{
+            id:req.id
+        },
+        include:[{
+            all:true,
+            nested:true
+        }]
+    }).then(data)
 }
 
 exports.findAll = (data) => {

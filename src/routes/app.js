@@ -22,6 +22,15 @@ module.exports = (express)=>{
             res.json(data)
         })
     })
+    // get url by id
+    router.get('/urls/:id', (req, res)=>{
+        req.body.id = req.params.id
+        // get one url back by ud
+        url.findOne(req.body,(data)=>{
+            //return the json info for the requested url
+            res.json(data)
+        })
+    })
     // post /api/v1/urls creates a new shortened link
     router.post('/urls',(req, res)=>{
         // send the req, res to shortener
