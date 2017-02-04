@@ -13,7 +13,7 @@ const db = require('./db.js')
 exports.create = (data, success, err) => {
     db.url.create(data).then(success).catch(err)
 }
-// find the last entry in the urls table
+// find entry based on id
 exports.findOne = (req, data, err) => {
     db.url.find({
         where:{
@@ -26,6 +26,7 @@ exports.findOne = (req, data, err) => {
     }).then(data).catch(err)
 }
 
+// This finds one entry based on the shortUrl value
 exports.findOneUrl = (req, data, err) => {
     db.url.find({
         where:{
