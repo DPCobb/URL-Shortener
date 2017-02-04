@@ -25,7 +25,7 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
 })
 
 // define the urls table
-const lastUrl = sequelize.define('url',{
+const createUrl = sequelize.define('url',{
     // url is original url
     url: {
         type: Sequelize.STRING,
@@ -47,4 +47,4 @@ sequelize.sync()
 
 // export sequelize and lastUrl
 exports.sequelize = sequelize
-exports.lastUrl = lastUrl
+exports.url = createUrl

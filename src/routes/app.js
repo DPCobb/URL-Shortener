@@ -9,17 +9,17 @@
 // require shortener - creates alphanumeric string
 const short = require('../modules/shortener.js')
 // require lastUrl model
-const lastUrl = require('../models/lastUrl.js')
+const url = require('../models/url.js')
 // export the router
 module.exports = (express)=>{
     // call router method
     let router = express.Router()
-    // get /api/v1/urls returns the last url created
+    // get /api/v1/urls returns all urls created
     router.get('/urls', (req, res)=>{
-        // find the last url created
-        lastUrl.findOne((url)=>{
+        // get all urls
+        url.findAll((data)=>{
             //return the json info for the last url
-            res.json(url)
+            res.json(data)
         })
     })
     // post /api/v1/urls creates a new shortened link

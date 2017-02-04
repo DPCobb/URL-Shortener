@@ -7,7 +7,7 @@
  */
 module.exports = (url, res) => {
     // require lastUrl model
-    const lastUrl = require('../models/lastUrl.js')
+    const saveUrl = require('../models/url.js')
     // setup the url prefix for shortened url
     let prefix = 'tyny.io/'
     // retrieve the url data
@@ -26,7 +26,7 @@ module.exports = (url, res) => {
         "tynyUrl": shortUrl
     }
     // add the created url to the db
-    lastUrl.create(data)
+    saveUrl.create(data)
     // send a json response with the shortened url
     // Static output not dependant on DB
     res.json({shortUrl: shortUrl})
