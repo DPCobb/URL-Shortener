@@ -20,7 +20,9 @@ app.use(body_parser.urlencoded({
 
 // set up the route prefixed with /api/v1
 app.use('/api/v1/', require('./routes/app.js')(express))
+// set up /go/ route
 app.use('/go/', require('./routes/go.js')(express))
+// set up direct route for redirect to link
 app.use('/', require('./routes/link.js')(express))
 
 // listen on port 3000
