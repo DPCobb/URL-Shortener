@@ -45,7 +45,7 @@ To create a user send a POST request to /api/v1/create with the following data:
 ```
 {
   "email": "example@example.com",
-  "pass": "Your password",
+  "pass": "Your password"
 }
 ```
 You will then receive a response in JSON with your user key.
