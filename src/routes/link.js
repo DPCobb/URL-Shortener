@@ -1,8 +1,8 @@
 /**
  *
  * Daniel Cobb
- * 2-1-2017
- * Assignment 1: Static API
+ * 2-4-2017
+ * Assignment 2: Dynamic API
  *
  */
 
@@ -11,7 +11,7 @@ module.exports = (express)=>{
     // call router method
     let router = express.Router()
 
-    // redirect based on short url
+    // redirect based on short url, used to redirect for tyny.io/URL
     router.get('/:url', (req, res)=>{
         // get the url param
         req.body.id = req.params.url

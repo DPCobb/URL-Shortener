@@ -1,8 +1,8 @@
 /**
  *
  * Daniel Cobb
- * 2-1-2017
- * Assignment 1: Static API
+ * 2-4-2017
+ * Assignment 2: Dynamic API
  *
  */
 module.exports = (url, res) => {
