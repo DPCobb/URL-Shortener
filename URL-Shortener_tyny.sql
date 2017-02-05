@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.6.28)
 # Database: tyny
-# Generation Time: 2017-02-02 19:53:01 +0000
+# Generation Time: 2017-02-05 20:45:18 +0000
 # ************************************************************
 
 
@@ -29,20 +29,30 @@ CREATE TABLE `urls` (
   `url` varchar(255) DEFAULT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `tynyUrl` varchar(255) DEFAULT NULL,
+  `shortUrl` varchar(255) DEFAULT NULL,
+  `key` varchar(255) DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-LOCK TABLES `urls` WRITE;
-/*!40000 ALTER TABLE `urls` DISABLE KEYS */;
 
-INSERT INTO `urls` (`url`, `id`, `tynyUrl`, `createdAt`, `updatedAt`)
-VALUES
-	('http://math.stackexchange.com/questions/605450/using-the-english-alphabet-a-z-and-digits-0-9-how-many-combinations-are-possibl',2,'tyny.io/ce62308','2017-02-02 19:15:54','2017-02-02 19:15:54');
 
-/*!40000 ALTER TABLE `urls` ENABLE KEYS */;
-UNLOCK TABLES;
+# Dump of table users
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `users`;
+
+CREATE TABLE `users` (
+  `email` varchar(255) DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `pass` varchar(255) DEFAULT NULL,
+  `key` varchar(255) DEFAULT NULL,
+  `createdAt` datetime NOT NULL,
+  `updatedAt` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 
 
