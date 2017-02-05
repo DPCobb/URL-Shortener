@@ -183,7 +183,7 @@ This GET request will return the information for a single URL based on the ID gi
 }
 ```
 ### /api/v1/urls/users/{KEY}
-This GET request will return all the generated URL's a given user key, in our example adding the key "43a995d29e" would return the following data:
+This GET request will return all the generated URL's for a given user key, in our example adding the key "43a995d29e" would return the following data:
 ```
 [
   {
