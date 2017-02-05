@@ -48,14 +48,19 @@ module.exports = (express)=>{
     })
     // post /api/v1/urls creates a new shortened link
     router.post('/urls',(req, res)=>{
+        // get the shortened url
         let shortUrl = short(req)
+        // display new url
         res.status(200).json(shortUrl)
+        // add to db
         url.create(shortUrl)
     })
 
     // update url by ID
     router.post('/urls/:id',(req, res)=>{
+        // get the id
         req.body.id = req.params.id
+        // update and display info or error
         url.update(req.body, (err)=>{
             res.status(500).json(err)
         }, (data)=>{
