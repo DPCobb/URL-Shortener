@@ -169,7 +169,7 @@ Sending a GET request to /api/v1/urls will return all of the created URL's:
   }
 ]
 ```
-### /api/v1/urls{ID}
+### /api/v1/urls/{ID}
 This GET request will return the information for a single URL based on the ID given, passing ID 1 will return a response of:
 ```
 {
