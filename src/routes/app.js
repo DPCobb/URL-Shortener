@@ -67,6 +67,25 @@ module.exports = (express)=>{
             res.status(200).json(data)
         })
     })
+
+    router.post('/create',(req, res)=>{
+        let user =  req.body.email
+        let pass = req.body.pass
+        let key = user + pass
+        const crypto = require('crypto');
+        // create the hash to build alphanumeric string
+        const keyHash = crypto.createHmac('sha256', key).digest('hex');
+        let data = {
+            "email": user,
+            "pass": pass,
+            "key": keyHash
+        }
+        let shortKeyHash = keyHash.substr(0,10)
+        // add to db
+        url.createUser(data,(success)=>{
+            res.status(200).json(data)
+        })
+    })
     // return the router
     return router
 }

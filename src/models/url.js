@@ -13,6 +13,10 @@ const db = require('./db.js')
 exports.create = (data, success, err) => {
     db.url.create(data).then(success).catch(err)
 }
+
+exports.createUser = (data, success, err) => {
+    db.user.create(data).then(success).catch(err)
+}
 // find entry based on id
 exports.findOne = (req, data, err) => {
     db.url.find({

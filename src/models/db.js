@@ -42,12 +42,38 @@ const createUrl = sequelize.define('url',{
     },
     shortUrl:{
         type: Sequelize.STRING,
+    },
+    key:{
+        type: Sequelize.STRING,
     }
 })
+// define the users table
+const user = sequelize.define('user',{
+    // user email
+    email: {
+        type: Sequelize.STRING,
+    },
+    // id is auto increment int
+    id: {
+        type:Sequelize.INTEGER,
+        autoIncrement: true,
+        primaryKey: true,
+    },
+    // user pass
+    pass:{
+        type: Sequelize.STRING,
+    },
+    // user key
+    key:{
+        type: Sequelize.STRING,
+    }
+})
+
 
 // create the tables
 sequelize.sync()
 
-// export sequelize and lastUrl
+// export sequelize, url, and user
 exports.sequelize = sequelize
 exports.url = createUrl
+exports.user = user
