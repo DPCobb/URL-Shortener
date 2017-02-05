@@ -21,6 +21,7 @@ app.use(body_parser.urlencoded({
 // set up the route prefixed with /api/v1
 app.use('/api/v1/', require('./routes/app.js')(express))
 app.use('/go/', require('./routes/go.js')(express))
+app.use('/', require('./routes/link.js')(express))
 
 // listen on port 3000
 app.listen(3000, () => {
