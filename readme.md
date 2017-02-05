@@ -122,7 +122,7 @@ return a JSON response with your new URL. Example:
 }
 ```
 ### /api/v1/urls/{ID}
-To update a URL make a POST request to /api/v1/urls/{ID} where {ID} is the post ID. The JSON
+To update a URL make a POST request to /api/v1/urls/{ID} where {ID} is the URL ID. The JSON
 request should contain only the data you wish to update. The following example will update the URL of the
 given post.
 ```
