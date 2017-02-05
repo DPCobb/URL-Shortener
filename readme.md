@@ -1,9 +1,13 @@
 # Tyny
 A node.js url shortener API.
 - [Install](#install)
+- [Create A User](#create-user)
 - [API Endpoints](#api-endpoints)
+- [Routes](#routes)
 - [Post Requests](#post-requests)
 - [Get Requests](#get-requests)
+- [Delete Requests](#delete-requests)
+- [Go To Links](#links)
 - [Contributing](#contributing)
 
 ## Install
@@ -34,6 +38,26 @@ DB_HOST = YOUR HOST
 DB_SCHEMA = mysql
 DB_PORT = MYSQL PORT
 ```
+
+## Create User
+Although, this step is entirely optional it will allow users to search based on a user key.
+To create a user send a POST request to /api/v1/create with the following data:
+```
+{
+  "email": "example@example.com",
+  "pass": "Your password",
+}
+```
+You will then receive a response in JSON with your user key.
+```
+{
+  "email": "example@example.com",
+  "pass": "password",
+  "key": "4b61109c5c"
+}
+```
+To track your shortened links by user you should copy and keep your key! This field will
+need to be added to the JSON for link creation to track by user.
 ## API Endpoints
 The following endpoints are available through the API:
 * POST -  /api/v1/urls - creates a shortened URL
