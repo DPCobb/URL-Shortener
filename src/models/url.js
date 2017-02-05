@@ -42,6 +42,18 @@ exports.findOneUrl = (req, data, err) => {
         }]
     }).then(data).catch(err)
 }
+// This finds one entry based on the user key value
+exports.findOneUser = (req, data, err) => {
+    db.url.find({
+        where:{
+            key:req.id
+        },
+        include:[{
+            all:true,
+            nested:true
+        }]
+    }).then(data).catch(err)
+}
 
 // finds all urls
 exports.findAll = (data, err) => {

@@ -24,7 +24,8 @@ module.exports = (url, res) => {
     let data = {
         "url": url.body.url,
         "tynyUrl": shortUrl,
-        "shortUrl": urlHash
+        "shortUrl": urlHash,
+        "key": url.body.key
     }
 
     return(data)

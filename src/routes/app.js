@@ -36,6 +36,17 @@ module.exports = (express)=>{
             res.status(500).json(data)
         }
     })
+    // get url by user key
+    router.get('/urls/user/:id', (req, res)=>{
+        req.body.id = req.params.id
+        // get one url back by user key
+        url.findOneUser(req.body,(data)=>{
+            //return the json info for the requested key
+            res.status(200).json(data)
+        }), (err) =>{
+            res.status(500).json(data)
+        }
+    })
     router.delete('/urls/:id', (req, res)=>{
         req.body.id = req.params.id
         // get one url back by ud
@@ -69,21 +80,27 @@ module.exports = (express)=>{
     })
 
     router.post('/create',(req, res)=>{
+        // get variables from req
         let user =  req.body.email
         let pass = req.body.pass
         let key = user + pass
+        // set up hash
         const crypto = require('crypto');
-        // create the hash to build alphanumeric string
+        // create the hash to build alphanumeric string for user key
         const keyHash = crypto.createHmac('sha256', key).digest('hex');
+        // shorten hash
+        let shortKeyHash = keyHash.substr(0,10)
+        // set data
         let data = {
             "email": user,
             "pass": pass,
-            "key": keyHash
+            "key": shortKeyHash
         }
-        let shortKeyHash = keyHash.substr(0,10)
         // add to db
         url.createUser(data,(success)=>{
             res.status(200).json(data)
+        }, (err) =>{
+            res.status(500).json(err)
         })
     })
     // return the router
