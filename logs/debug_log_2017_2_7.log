@@ -68,3 +68,63 @@ Listening to Server on Port 3000
 Event at 17:51:45 @ server.js line 34
 SUCCESS
 Listening to Server on Port 3000
+
+**********
+Event at 18:48:55 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
+
+**********
+Event at 18:49:4 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
+
+**********
+Event at 18:49:12 @ server.js line 34
+[32m%s[0mSUCCESS
+Listening to Server on Port 3000
+
+**********
+Event at 18:49:32 @ server.js line 34
+[32mSUCCESS[0m
+Listening to Server on Port 3000
+
+**********
+Event at 18:50:2 @ server.js line 34
+[32mSUCCESS[0m
+Listening to Server on Port 3000
+
+**********
+Event at 18:50:28 @ server.js line 34
+[32mSUCCESS[0m
+Listening to Server on Port 3000
+
+**********
+Event at 18:50:58 @ server.js line 34
+[32mSUCCESS[0m
+Listening to Server on Port 3000
+
+**********
+Event at 18:53:53 @ server.js line 34
+[32mSUCCESS[0m
+Listening to Server on Port 3000
+
+**********
+Event at 18:54:38 @ server.js line 34
+[32mSUCCESS[0m
+Listening to Server on Port 3000
+
+**********
+Event at 18:54:57 @ server.js line 34
+[31mERROR[0m
+Listening to Server on Port 3000
+
+**********
+Event at 18:55:4 @ server.js line 34
+[33mWARNING[0m
+Listening to Server on Port 3000
+
+**********
+Event at 18:55:13 @ server.js line 34
+[32mSUCCESS[0m
+Listening to Server on Port 3000

@@ -40,8 +40,21 @@ module.exports = {
         if (debug === 'true'){
             let date = this.getDate()
             let time = this.getTime()
-            let parseData = JSON.stringify(data)
-            let logMsg = "\n**********\nEvent at " + time + " @ "+data.location+"\n" + data.type.toUpperCase() + "\n" + data.msg
+            let resetColor = '\x1b[0m'
+            let successColor = '\x1b[32m'
+            let errorColor = '\x1b[31m'
+            let defaultColor = '\x1b[33m'
+            let type = defaultColor + data.type.toUpperCase() + resetColor
+            if(data.type === 'success'){
+                type = successColor + data.type.toUpperCase() + resetColor
+            }
+            else if(data.type === 'error'){
+                type = errorColor + data.type.toUpperCase() + resetColor
+            }
+            else{
+                type = defaultColor + data.type.toUpperCase() + resetColor
+            }
+            let logMsg = "\n**********\nEvent at " + time + " @ "+data.location+"\n" + type + "\n" + data.msg
             if(data.data){
                 logMsg += "\nReturned Data: \n-- "+JSON.stringify(data.data).split(",").join("\n    ").replace(/[{}"]/g , " ")
             }
