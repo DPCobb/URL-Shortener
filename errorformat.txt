@@ -1,0 +1,8 @@
+{
+"type": "WARN, ERROR, LOG, SUCCESS",
+"msg": "Your password",
+"data":{
+"email": "example@example.com",
+"pass": "Your password"
+}
+}

@@ -31,7 +31,12 @@ app.use('/', require('./routes/link.js')(express))
 // listen on port 3000
 app.listen(3000, () => {
     //console.log('Hello World.')
-    log.debug('Hello World')
-    log.debug('test')
-    log.debug('test')
+    log.debug({
+    "type": "success",
+    "msg": "Listening to Server on Port 3000",
+    "data":{
+    "email": "example@example.com",
+    "pass": "Your password"
+    }
+    })
 })

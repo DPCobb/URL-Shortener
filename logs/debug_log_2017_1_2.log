@@ -1,10 +1,22 @@
 
-Hello World
-test
-test
-Hello World
-test
-test
-Hello World
-test
-test
+
+**********
+SUCCESS
+Listening to Server on Port 3000
+{"email":"example@example.com","pass":"Your password"}
+
+**********
+SUCCESS
+Listening to Server on Port 3000
+{"email":"example@example.com","pass":"Your password"}
+
+**********
+SUCCESS
+Listening to Server on Port 3000
+{"email":"example@example.com","pass":"Your password"}
+
+**********
+Event at 16:15:14
+SUCCESS
+Listening to Server on Port 3000
+{"email":"example@example.com","pass":"Your password"}
