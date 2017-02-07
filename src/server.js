@@ -8,6 +8,8 @@
 
 // require debug tool, express, and body-parser
 const log = require('./modules/debug.js')
+// Show debug warning
+log.debugWarn()
 let express = require('express')
 let body_parser = require('body-parser')
 // instantiate express
@@ -30,4 +32,6 @@ app.use('/', require('./routes/link.js')(express))
 app.listen(3000, () => {
     //console.log('Hello World.')
     log.debug('Hello World')
+    log.debug('test')
+    log.debug('test')
 })
