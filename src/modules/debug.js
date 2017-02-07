@@ -15,7 +15,6 @@ module.exports = {
         let day = dateObj.getDate()
         let year = dateObj.getFullYear()
         let date = year + '_' + month + '_' + day
-        console.log(date)
         return date
     },
     getTime() {

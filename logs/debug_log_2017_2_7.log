@@ -1,21 +1,70 @@
+**********
+Event at 17:05:30 @ app.js line 42
+SUCCESS
+Returned URL based on ID
+Returned Data:
+--   data :  url : http://www.google.com
+     id :1
+     tynyUrl : tyny.io/7fdcdf0
+     shortUrl : 7fdcdf0
+     key : 43a995d29e
+     createdAt : 2017-02-05T19:49:59.000Z
+     updatedAt : 2017-02-05T20:11:27.000Z
+Data Passed:
+--   body :  id : 1
 
 
 **********
-Event at 17:1:8 @ server.js line 34
+Event at 17:07:49 @ server.js line 34
 SUCCESS
 Listening to Server on Port 3000
 
 **********
-Event at 17:2:23 @ server.js line 34
+Event at 17:46:53 @ server.js line 34
 SUCCESS
 Listening to Server on Port 3000
 
 **********
-Event at 17:${0}4:5 @ server.js line 34
+Event at 17:48:15 @ server.js line 34
 SUCCESS
 Listening to Server on Port 3000
 
 **********
-Event at 17:04:32 @ server.js line 34
+Event at 17:48:43 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
+
+**********
+Event at 17:48:50 @ server.js line 34
+[32M%S[0MSUCCESS
+Listening to Server on Port 3000
+
+**********
+Event at 17:49:40 @ server.js line 34
+[32M%S[0MSUCCESS
+Listening to Server on Port 3000
+
+**********
+Event at 17:50:40 @ server.js line 34
+[32M%S[0MSUCCESS
+Listening to Server on Port 3000
+
+**********
+Event at 17:51:9 @ server.js line 34
+ [32m%s[0m[32M%S[0MSUCCESS
+Listening to Server on Port 3000
+
+**********
+Event at 17:51:24 @ server.js line 34
+[32M%S[0MSUCCESS
+Listening to Server on Port 3000
+
+**********
+Event at 17:51:36 @ server.js line 34
+[32M%S[0MSUCCESS
+Listening to Server on Port 3000
+
+**********
+Event at 17:51:45 @ server.js line 34
 SUCCESS
 Listening to Server on Port 3000
