@@ -35,10 +35,6 @@ app.listen(3000, () => {
         "type": "success",
         "msg": "Listening to Server on Port 3000",
         "location" : "server.js line 34",
-        "data":{
-            "email": "example@example.com",
-            "pass": "Your password"
-        }
     })
     log.msg('Hello World from log.msg')
 })

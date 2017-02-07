@@ -10,17 +10,21 @@ const fs = require('fs')
 require('dotenv').config()
 module.exports = {
     getDate() {
-        let dateObj = new Date
-        let month = dateObj.getMonth()
-        let day = dateObj.getDay()
+        let dateObj = new Date()
+        let month = dateObj.getMonth() + 1
+        let day = dateObj.getDate()
         let year = dateObj.getFullYear()
         let date = year + '_' + month + '_' + day
+        console.log(date)
         return date
     },
     getTime() {
         let dateObj = new Date
         let h = dateObj.getHours()
         let m = dateObj.getMinutes()
+        if(m < 10){
+            m = `${0}` + m
+        }
         let s = dateObj.getSeconds()
         let time = h + ':' + m + ':' + s
         return time
@@ -59,7 +63,7 @@ module.exports = {
     msg(data) {
         let debug = process.env.DEBUG
         if (debug === 'true'){
-            console.log(data)
+            console.log("MSG: " + data)
         }
     }
  }
