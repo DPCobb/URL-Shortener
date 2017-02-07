@@ -6,7 +6,8 @@
  *
  */
 
-// require express and body-parser
+// require debug tool, express, and body-parser
+const log = require('./modules/debug.js')
 let express = require('express')
 let body_parser = require('body-parser')
 // instantiate express
@@ -27,5 +28,6 @@ app.use('/', require('./routes/link.js')(express))
 
 // listen on port 3000
 app.listen(3000, () => {
-    console.log('Hello World.')
+    //console.log('Hello World.')
+    log.debug('Hello World')
 })
