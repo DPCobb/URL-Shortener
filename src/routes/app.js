@@ -11,7 +11,7 @@ const short = require('../modules/shortener.js')
 // require lastUrl model
 const url = require('../models/url.js')
 // export the router
-module.exports = (express)=>{
+module.exports = (express, log)=>{
     // call router method
     let router = express.Router()
 
@@ -21,8 +21,21 @@ module.exports = (express)=>{
         url.findAll((data)=>{
             //return the json info for the last url
             res.status(200).json(data)
+            log.debug({
+                "type": "success",
+                "msg": "Returned all URL's",
+                "location" : "app.js line 19",
+            })
         }), (err) =>{
             res.status(500).json(data)
+            log.debug({
+                "type": "ERROR",
+                "msg": "Could not retrieve URL's",
+                "location" : "app.js line 19",
+                "data":{
+                    data
+                }
+            })
         }
     })
     // get url by id
@@ -32,8 +45,28 @@ module.exports = (express)=>{
         url.findOne(req.body,(data)=>{
             //return the json info for the requested url
             res.status(200).json(data)
+            let body = req.body
+            log.debug({
+                "type": "success",
+                "msg": "Returned URL based on ID",
+                "location" : "app.js line 42",
+                "data":{
+                    data
+                },
+                "request":{
+                    body
+                }
+            })
         }), (err) =>{
             res.status(500).json(data)
+            log.debug({
+                "type": "ERROR",
+                "msg": "Could not retrieve URL based on ID",
+                "location" : "app.js line 42",
+                "data":{
+                    data
+                }
+            })
         }
     })
     // get url by user key

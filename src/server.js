@@ -7,7 +7,7 @@
  */
 
 // require debug tool, express, and body-parser
-const log = require('./modules/debug.js')
+let log = require('./modules/debug.js')
 // Show debug warning
 log.debugWarn()
 let express = require('express')
@@ -22,21 +22,23 @@ app.use(body_parser.urlencoded({
 }))
 
 // set up the route prefixed with /api/v1
-app.use('/api/v1/', require('./routes/app.js')(express))
+app.use('/api/v1/', require('./routes/app.js')(express, log))
 // set up /go/ route
-app.use('/go/', require('./routes/go.js')(express))
+app.use('/go/', require('./routes/go.js')(express, log))
 // set up direct route for redirect to link
-app.use('/', require('./routes/link.js')(express))
+app.use('/', require('./routes/link.js')(express, log))
 
 // listen on port 3000
 app.listen(3000, () => {
     //console.log('Hello World.')
     log.debug({
-    "type": "success",
-    "msg": "Listening to Server on Port 3000",
-    "data":{
-    "email": "example@example.com",
-    "pass": "Your password"
-    }
+        "type": "success",
+        "msg": "Listening to Server on Port 3000",
+        "location" : "server.js line 34",
+        "data":{
+            "email": "example@example.com",
+            "pass": "Your password"
+        }
     })
+    log.msg('Hello World from log.msg')
 })

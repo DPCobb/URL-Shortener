@@ -1,8 +1,9 @@
 {
 "type": "WARN, ERROR, LOG, SUCCESS",
 "msg": "Your password",
+"location": "Where this message is coming from: file and line"
 "data":{
-"email": "example@example.com",
-"pass": "Your password"
-}
+    "email": "example@example.com",
+    "pass": "Your password"
+    }
 }
