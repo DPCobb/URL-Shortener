@@ -40,10 +40,10 @@ module.exports = {
             let parseData = JSON.stringify(data)
             let logMsg = "\n**********\nEvent at " + time + " @ "+data.location+"\n" + data.type.toUpperCase() + "\n" + data.msg
             if(data.data){
-                logMsg += "\nReturned Data: \n-- "+JSON.stringify(data.data)
+                logMsg += "\nReturned Data: \n-- "+JSON.stringify(data.data).split(",").join("\n    ").replace(/[{}"]/g , " ")
             }
             if(data.request){
-                logMsg += "\nData Passed: \n-- "+JSON.stringify(data.request)
+                logMsg += "\nData Passed: \n-- "+JSON.stringify(data.request).split(",").join("\n    ").replace(/[{}"]/g , " ")
             }
             fs.appendFile('./logs/debug_log_'+date+'.log', '\n' + logMsg, (err) => {
                 if (err) throw err;

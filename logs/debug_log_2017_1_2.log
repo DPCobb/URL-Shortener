@@ -168,3 +168,145 @@ Returned Data:
 -- {"data":{"url":"http://www.google.com","id":1,"tynyUrl":"tyny.io/7fdcdf0","shortUrl":"7fdcdf0","key":"43a995d29e","createdAt":"2017-02-05T19:49:59.000Z","updatedAt":"2017-02-05T20:11:27.000Z"}}
 Data Passed: 
 -- {"body":{"id":"1"}}
+
+**********
+Event at 16:44:16 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
+Returned Data: 
+-- {"email":"example@example.com"
+"pass":"Your password"}
+
+**********
+Event at 16:44:33 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
+Returned Data: 
+-- {"email":"example@example.com"
+     "pass":"Your password"}
+
+**********
+Event at 16:44:39 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
+Returned Data: 
+-- {"email":"example@example.com"
+    "pass":"Your password"}
+
+**********
+Event at 16:44:41 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
+Returned Data: 
+-- {"email":"example@example.com"
+    "pass":"Your password"}
+
+**********
+Event at 16:46:4 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
+Returned Data: 
+-- {"email":"example@example.com"
+    "pass":"Your password"}
+
+**********
+Event at 16:46:11 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
+Returned Data: 
+--  "email":"example@example.com"
+    "pass":"Your password"}
+
+**********
+Event at 16:46:30 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
+Returned Data: 
+-- {"email":"example@example.com"
+    "pass":"Your password"}
+
+**********
+Event at 16:46:35 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
+Returned Data: 
+-- {"email":"example@example.com"
+    "pass":"Your password"}
+
+**********
+Event at 16:47:2 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
+Returned Data: 
+-- {"email":"example@example.com"
+    "pass":"Your password"}
+
+**********
+Event at 16:47:4 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
+Returned Data: 
+-- {"email":"example@example.com"
+    "pass":"Your password"}
+
+**********
+Event at 16:47:9 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
+Returned Data: 
+-- {"email":"example@example.com"
+    "pass":"Your password"}
+
+**********
+Event at 16:48:0 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
+Returned Data: 
+--  "email":"example@example.com"
+    "pass":"Your password" 
+
+**********
+Event at 16:48:21 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
+Returned Data: 
+--  "email":"example@example.com"
+    "pass":"Your password" 
+
+**********
+Event at 16:48:27 @ app.js line 42
+SUCCESS
+Returned URL based on ID
+Returned Data: 
+--  "data": "url":"http://www.google.com"
+    "id":1
+    "tynyUrl":"tyny.io/7fdcdf0"
+    "shortUrl":"7fdcdf0"
+    "key":"43a995d29e"
+    "createdAt":"2017-02-05T19:49:59.000Z"
+    "updatedAt":"2017-02-05T20:11:27.000Z"  
+Data Passed: 
+--  "body": "id":"1"  
+
+**********
+Event at 16:48:52 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
+Returned Data: 
+--   email : example@example.com 
+     pass : Your password  
+
+**********
+Event at 16:49:9 @ app.js line 42
+SUCCESS
+Returned URL based on ID
+Returned Data: 
+--   data :  url : http://www.google.com 
+     id :1
+     tynyUrl : tyny.io/7fdcdf0 
+     shortUrl : 7fdcdf0 
+     key : 43a995d29e 
+     createdAt : 2017-02-05T19:49:59.000Z 
+     updatedAt : 2017-02-05T20:11:27.000Z   
+Data Passed: 
+--   body :  id : 1   
