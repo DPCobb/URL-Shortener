@@ -8,6 +8,7 @@
 let log = require('../modules/debug.js')
 module.exports = (url, res) => {
     // require lastUrl model
+    log.msg("URL being shortened...")
     const saveUrl = require('../models/url.js')
     // setup the url prefix for shortened url
     let prefix = 'tyny.io/'
@@ -19,6 +20,7 @@ module.exports = (url, res) => {
     const hash = crypto.createHmac('sha256', urlHash).digest('hex');
     // shorten hash length to 7, creates > 8 billion possible urls
     urlHash = hash.substr(0,7)
+    log.msg("Created Short URL: " + urlHash)
     // create the shortened url to return
     let shortUrl = prefix + urlHash
     // create data to send to lastUrl model

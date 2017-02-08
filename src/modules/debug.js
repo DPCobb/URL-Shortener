@@ -47,6 +47,10 @@ module.exports = {
             let errorColor = '\x1b[31m'
             let defaultColor = '\x1b[33m'
             let type = defaultColor + data.type.toUpperCase() + resetColor
+            console.log('data: '+data.request)
+            if(data.data && !data.data.data){
+                data.type = "warning - request returned null"
+            }
             if(data.type === 'success'){
                 type = successColor + data.type.toUpperCase() + resetColor
             }
