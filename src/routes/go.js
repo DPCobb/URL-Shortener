@@ -47,7 +47,7 @@ module.exports = (express)=>{
             }
         }), (err) =>{
             log.debug({
-                "type": "success",
+                "type": "error",
                 "msg": "Redirect User to external URL failed",
                 "location" : "go.js line 15",
                 "data":{
@@ -96,7 +96,7 @@ module.exports = (express)=>{
             }
         }), (err)=>{
             log.debug({
-                "type": "success",
+                "type": "error",
                 "msg": "Redirect User to external URL failed",
                 "location" : "go.js line 15",
                 "data":{
