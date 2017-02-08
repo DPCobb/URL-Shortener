@@ -52,7 +52,7 @@ module.exports = (express)=>{
                 "location" : "go.js line 15",
                 "data":{
                     err
-                }
+                },
                 "request":{
                     target
                 }
@@ -101,7 +101,7 @@ module.exports = (express)=>{
                 "location" : "go.js line 15",
                 "data":{
                     err
-                }
+                },
                 "request":{
                     target
                 }
