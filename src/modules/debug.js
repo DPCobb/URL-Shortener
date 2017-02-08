@@ -31,13 +31,15 @@ module.exports = {
     debugWarn() {
         let debug = process.env.DEBUG
         if(debug === 'true'){
-            console.warn('******************** \n Debugging Mode is Active!\n********************\n')
+            console.warn('**************************************** \n Debugging Mode is Active!\n\n****************************************\n')
         }
     },
     // debug takes json data, logs to console and to log file
     debug(data) {
         let debug = process.env.DEBUG
         if (debug === 'true'){
+            let logData = ''
+            let logReq = ''
             let date = this.getDate()
             let time = this.getTime()
             let resetColor = '\x1b[0m'
@@ -55,13 +57,20 @@ module.exports = {
                 type = defaultColor + data.type.toUpperCase() + resetColor
             }
             let logMsg = "\n**********\nEvent at " + time + " @ "+data.location+"\n" + type + "\n" + data.msg
+            // logFile doesn't print color but will print after \x1b ex [32mSUCCESS[0m will print
+            let logFile = "\n**********\nEvent at " + time + " @ "+data.location+"\n" + data.type.toUpperCase() + "\n" + data.msg
             if(data.data){
-                logMsg += "\nReturned Data: \n-- "+JSON.stringify(data.data).split(",").join("\n    ").replace(/[{}"]/g , " ")
+                logData = "\nReturned Data: \n-- "+JSON.stringify(data.data).split(",").join("\n    ").replace(/[{}"]/g , " ")
             }
             if(data.request){
-                logMsg += "\nData Passed: \n-- "+JSON.stringify(data.request).split(",").join("\n    ").replace(/[{}"]/g , " ")
+                logReq = "\nRequested Data: \n-- "+JSON.stringify(data.request).split(",").join("\n    ").replace(/[{}"]/g , " ")
             }
-            fs.appendFile('./logs/debug_log_'+date+'.log', '\n' + logMsg, (err) => {
+            logMsg += logData
+            logMsg += logReq
+            logFile += logData
+            logFile += logReq
+
+            fs.appendFile('./logs/debug_log_'+date+'.log', '\n' + logFile, (err) => {
                 if (err) throw err;
                 console.log(logMsg)
          })
