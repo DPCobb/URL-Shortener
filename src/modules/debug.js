@@ -72,7 +72,10 @@ module.exports = {
 
             fs.appendFile('./logs/debug_log_'+date+'.log', '\n' + logFile, (err) => {
                 if (err) throw err;
-                console.log(logMsg)
+                let consoleDebug = process.env.DEBUG_CONSOLE
+                if (consoleDebug === 'true'){
+                    console.log(logMsg)
+                }
          })
      }
 
@@ -83,8 +86,9 @@ module.exports = {
     // Msg acts like a standard console.log if debug is true, and doesn't append to log file
     msg(data) {
         let debug = process.env.DEBUG
-        if (debug === 'true'){
-            console.log("MSG: " + data)
+        let consoleDebug = process.env.DEBUG_CONSOLE
+        if (debug === 'true' && consoleDebug === 'true'){
+            console.log("\x1b[37mMSG:\x1b[0m " + data)
         }
     }
  }
