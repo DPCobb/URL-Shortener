@@ -25,7 +25,7 @@ module.exports = (express, log)=>{
             log.debug({
                 "type": "success",
                 "msg": "Returned all URL's",
-                "location" : "app.js line 19",
+                "location" : "app.js line 19 GET:/urls",
                 "data":{
                     data
                 }
@@ -36,7 +36,7 @@ module.exports = (express, log)=>{
             log.debug({
                 "type": "error",
                 "msg": "Could not update short URL by ID",
-                "location" : "app.js line 19",
+                "location" : "app.js line 19 GET:/urls",
                 "data":err,
                 "request":{
                     body
@@ -55,7 +55,7 @@ module.exports = (express, log)=>{
             log.debug({
                 "type": "success",
                 "msg": "Returned URL based on ID",
-                "location" : "app.js line 48",
+                "location" : "app.js line 48 GET:/urls/:id",
                 "data":{
                     data
                 },
@@ -69,7 +69,7 @@ module.exports = (express, log)=>{
             log.debug({
                 "type": "error",
                 "msg": "Could not update short URL by ID",
-                "location" : "app.js line 48",
+                "location" : "app.js line 48 GET:/urls/:id",
                 "data":err,
                 "request":{
                     body
@@ -88,7 +88,7 @@ module.exports = (express, log)=>{
             log.debug({
                 "type": "success",
                 "msg": "Returned URL's based on User Key",
-                "location" : "app.js line 81",
+                "location" : "app.js line 81 GET:/urls/user/:id",
                 "data":{
                     data
                 },
@@ -102,7 +102,7 @@ module.exports = (express, log)=>{
             log.debug({
                 "type": "error",
                 "msg": "Could not update short URL by ID",
-                "location" : "app.js line 81",
+                "location" : "app.js line 81 GET:/urls/user/:id",
                 "data":err,
                 "request":{
                     body
@@ -120,7 +120,7 @@ module.exports = (express, log)=>{
             log.debug({
                 "type": "success",
                 "msg": "Deleted URL based on ID",
-                "location" : "app.js line 113",
+                "location" : "app.js line 113 DELETE:/urls/:id",
                 "data":{
                     data
                 },
@@ -134,7 +134,7 @@ module.exports = (express, log)=>{
             log.debug({
                 "type": "error",
                 "msg": "Could not update short URL by ID",
-                "location" : "app.js line 113",
+                "location" : "app.js line 113 DELETE:/urls/:id",
                 "data":err,
                 "request":{
                     body
@@ -153,7 +153,7 @@ module.exports = (express, log)=>{
             log.debug({
                 "type": "success",
                 "msg": "Created short URL",
-                "location" : "app.js line 146",
+                "location" : "app.js line 146 POST:/urls",
                 "data":{
                     data
                 },
@@ -167,7 +167,7 @@ module.exports = (express, log)=>{
             log.debug({
                 "type": "error",
                 "msg": "Could not update short URL by ID",
-                "location" : "app.js line 146",
+                "location" : "app.js line 146 POST:/urls",
                 "data":err,
                 "request":{
                     body
@@ -187,7 +187,7 @@ module.exports = (express, log)=>{
             log.debug({
                 "type": "error",
                 "msg": "Could not update short URL by ID",
-                "location" : "app.js line 180",
+                "location" : "app.js line 180 POST:/urls/:id",
                 "data":err,
                 "request":{
                     body
@@ -199,7 +199,7 @@ module.exports = (express, log)=>{
             log.debug({
                 "type": "success",
                 "msg": "Updated short URL by ID",
-                "location" : "app.js line 180",
+                "location" : "app.js line 180 POST:/urls/:id",
                 "data":{
                     data
                 },
@@ -234,7 +234,7 @@ module.exports = (express, log)=>{
             log.debug({
                 "type": "success",
                 "msg": "Created new User Key",
-                "location" : "app.js line 213",
+                "location" : "app.js line 213 POST:/create",
                 "data":{
                     data
                 },
@@ -248,7 +248,7 @@ module.exports = (express, log)=>{
             log.debug({
                 "type": "error",
                 "msg": "Could not update short URL by ID",
-                "location" : "app.js line 213",
+                "location" : "app.js line 213 POST:/create",
                 "data":err,
                 "request":{
                     body

@@ -27,7 +27,7 @@ module.exports = (express)=>{
                 log.debug({
                     "type": "success",
                     "msg": "Redirected User to external URL",
-                    "location" : "go.js line 15",
+                    "location" : "go.js line 15 GET:/:id",
                     "request":{
                         target
                     }
@@ -39,7 +39,7 @@ module.exports = (express)=>{
                 log.debug({
                     "type": "success",
                     "msg": "Redirected User to external URL",
-                    "location" : "go.js line 15",
+                    "location" : "go.js line 15 GET:/:id",
                     "request":{
                         target
                     }
@@ -49,7 +49,7 @@ module.exports = (express)=>{
             log.debug({
                 "type": "error",
                 "msg": "Redirect User to external URL failed",
-                "location" : "go.js line 15",
+                "location" : "go.js line 15 GET:/:id",
                 "data":{
                     err
                 },
@@ -76,7 +76,7 @@ module.exports = (express)=>{
                 log.debug({
                     "type": "success",
                     "msg": "Redirected User to external URL",
-                    "location" : "go.js line 65",
+                    "location" : "go.js line 65 GET:/:prefix/:url",
                     "request":{
                         target
                     }
@@ -88,7 +88,7 @@ module.exports = (express)=>{
                 log.debug({
                     "type": "success",
                     "msg": "Redirected User to external URL",
-                    "location" : "go.js line 65",
+                    "location" : "go.js line 65 GET:/:prefix/:url",
                     "request":{
                         target
                     }
@@ -98,7 +98,7 @@ module.exports = (express)=>{
             log.debug({
                 "type": "error",
                 "msg": "Redirect User to external URL failed",
-                "location" : "go.js line 15",
+                "location" : "go.js line 15 GET:/:prefix/:url",
                 "data":{
                     err
                 },

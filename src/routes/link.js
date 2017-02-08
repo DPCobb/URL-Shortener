@@ -27,7 +27,7 @@ module.exports = (express)=>{
                 log.debug({
                     "type": "success",
                     "msg": "Redirected User to external URL",
-                    "location" : "link.js line 15",
+                    "location" : "link.js line 15 GET:/:url",
                     "request":{
                         target
                     }
@@ -39,7 +39,7 @@ module.exports = (express)=>{
                 log.debug({
                     "type": "success",
                     "msg": "Redirected User to external URL",
-                    "location" : "link.js line 15",
+                    "location" : "link.js line 15 GET:/:url",
                     "request":{
                         target
                     }
@@ -49,7 +49,7 @@ module.exports = (express)=>{
             log.debug({
                 "type": "error",
                 "msg": "Redirect User to external URL failed",
-                "location" : "link.js line 15",
+                "location" : "link.js line 15 GET:/:url",
                 "data":err,
                 "request":{
                     target

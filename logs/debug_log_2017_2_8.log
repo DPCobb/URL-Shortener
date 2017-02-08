@@ -1,52 +1,36 @@
 
 
 **********
-Event at 17:14:31 @ server.js line 34
-SUCCESS
-Listening to Server on Port 3000
-
-**********
-Event at 17:15:10 @ app.js line 46
+Event at 17:41:53 @ app.js line 48 GET:/urls/:id
 SUCCESS
 Returned URL based on ID
-Returned Data:
---   data :  url : https://coderwall.com/p/yphywg/printing-colorful-text-in-terminal-when-run-node-js-script
+Returned Data: 
+--   data :  url : https://coderwall.com/p/yphywg/printing-colorful-text-in-terminal-when-run-node-js-script 
      id :9
-     tynyUrl : tyny.io/a829a00
-     shortUrl : a829a00
-     key : 43a995d29e
-     createdAt : 2017-02-08T18:40:36.000Z
-     updatedAt : 2017-02-08T18:40:36.000Z
-Requested Data:
---   body :  id : 9
+     tynyUrl : tyny.io/a829a00 
+     shortUrl : a829a00 
+     key : 43a995d29e 
+     createdAt : 2017-02-08T18:40:36.000Z 
+     updatedAt : 2017-02-08T18:40:36.000Z   
+Requested Data: 
+--   body :  id : 9   
 
 **********
-Event at 17:15:18 @ app.js line 46
+Event at 17:41:57 @ app.js line 48 GET:/urls/:id
 WARNING - REQUEST RETURNED NULL
 Returned URL based on ID
-Returned Data:
---   data :null
-Requested Data:
---   body :  id : 97890
+Returned Data: 
+--   data :null 
+Requested Data: 
+--   body :  id : 999999   
 
 **********
-Event at 17:15:25 @ app.js line 170
+Event at 17:42:2 @ app.js line 180 POST:/urls/:id
 ERROR
 Could not update short URL by ID
-Returned Data:
+Returned Data: 
  TypeError: Cannot read property 'updateAttributes' of null
-Requested Data:
---   body :  url : https://coderwall.com/p/yphywg/printing-colorful-text-in-terminal-when-run-node-js-script
-     key : 43a995d29e
-     id : 97890
-
-
-**********
-Event at 17:32:49 @ server.js line 34
-SUCCESS
-Listening to Server on Port 3000
-
-**********
-Event at 17:33:31 @ server.js line 34
-SUCCESS
-Listening to Server on Port 3000
+Requested Data: 
+--   body :  url : https://coderwall.com/p/yphywg/printing-colorful-text-in-terminal-when-run-node-js-script 
+     key : 43a995d29e 
+     id : 999999   
