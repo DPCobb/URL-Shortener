@@ -5,6 +5,7 @@
  * Assignment 2: Dynamic API
  *
  */
+let log = require('../modules/debug.js')
 module.exports = (url, res) => {
     // require lastUrl model
     const saveUrl = require('../models/url.js')
@@ -27,6 +28,14 @@ module.exports = (url, res) => {
         "shortUrl": urlHash,
         "key": url.body.key
     }
+    log.debug({
+        "type": "success",
+        "msg": "Created a Short URL",
+        "location" : "shortener.js line 8",
+        "data":{
+            data
+        }
+    })
 
     return(data)
 }
