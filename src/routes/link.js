@@ -50,9 +50,7 @@ module.exports = (express)=>{
                 "type": "error",
                 "msg": "Redirect User to external URL failed",
                 "location" : "link.js line 15",
-                "data":{
-                    err
-                },
+                "data":err,
                 "request":{
                     target
                 }

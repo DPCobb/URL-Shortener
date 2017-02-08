@@ -39,3 +39,14 @@ Requested Data:
 --   body :  url : https://coderwall.com/p/yphywg/printing-colorful-text-in-terminal-when-run-node-js-script
      key : 43a995d29e
      id : 97890
+
+
+**********
+Event at 17:32:49 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
+
+**********
+Event at 17:33:31 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
