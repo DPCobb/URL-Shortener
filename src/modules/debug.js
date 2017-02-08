@@ -47,8 +47,7 @@ module.exports = {
             let errorColor = '\x1b[31m'
             let defaultColor = '\x1b[33m'
             let type = defaultColor + data.type.toUpperCase() + resetColor
-            console.log('data: '+data.request)
-            if(data.data && !data.data.data){
+            if(data.data && !data.data.data && data.type != 'error'){
                 data.type = "warning - request returned null"
             }
             if(data.type === 'success'){
@@ -63,8 +62,11 @@ module.exports = {
             let logMsg = "\n**********\nEvent at " + time + " @ "+data.location+"\n" + type + "\n" + data.msg
             // logFile doesn't print color but will print after \x1b ex [32mSUCCESS[0m will print
             let logFile = "\n**********\nEvent at " + time + " @ "+data.location+"\n" + data.type.toUpperCase() + "\n" + data.msg
-            if(data.data){
+            if(data.data && data.type != 'error'){
                 logData = "\nReturned Data: \n-- "+JSON.stringify(data.data).split(",").join("\n    ").replace(/[{}"]/g , " ")
+            }
+            if(data.type === "error"){
+                logData = "\nReturned Data: \n "+ data.data
             }
             if(data.request){
                 logReq = "\nRequested Data: \n-- "+JSON.stringify(data.request).split(",").join("\n    ").replace(/[{}"]/g , " ")

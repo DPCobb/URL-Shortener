@@ -45,7 +45,7 @@ module.exports = (express)=>{
                     }
                 })
             }
-        }), (err)=>{
+        }, (err)=>{
             log.debug({
                 "type": "error",
                 "msg": "Redirect User to external URL failed",
@@ -57,7 +57,7 @@ module.exports = (express)=>{
                     target
                 }
             })
-        }
+        })
     })
     return router
 }

@@ -30,17 +30,19 @@ module.exports = (express, log)=>{
                     data
                 }
             })
-        }), (err) =>{
+        }, (err) =>{
             res.status(500).json(err)
+            let body = req.body
             log.debug({
-                "type": "ERROR",
-                "msg": "Could not retrieve URL's",
-                "location" : "app.js line 19",
-                "data":{
-                    err
+                "type": "error",
+                "msg": "Could not update short URL by ID",
+                "location" : "app.js line 170",
+                "data":err,
+                "request":{
+                    body
                 }
             })
-        }
+        })
     })
     // get url by id
     router.get('/urls/:id', (req, res)=>{
@@ -61,17 +63,19 @@ module.exports = (express, log)=>{
                     body
                 }
             })
-        }), (err) =>{
+        }, (err) => {
             res.status(500).json(err)
+            let body = req.body
             log.debug({
-                "type": "ERROR",
-                "msg": "Could not retrieve URL based on ID",
-                "location" : "app.js line 46",
-                "data":{
-                    err
+                "type": "error",
+                "msg": "Could not update short URL by ID",
+                "location" : "app.js line 170",
+                "data":err,
+                "request":{
+                    body
                 }
             })
-        }
+        })
     })
     // get url by user key
     router.get('/urls/user/:id', (req, res)=>{
@@ -92,17 +96,19 @@ module.exports = (express, log)=>{
                     body
                 }
             })
-        }), (err) =>{
+        }, (err) =>{
             res.status(500).json(err)
+            let body = req.body
             log.debug({
-                "type": "ERROR",
-                "msg": "Could not retrieve URL's based on User Key",
-                "location" : "app.js line 77",
-                "data":{
-                    err
+                "type": "error",
+                "msg": "Could not update short URL by ID",
+                "location" : "app.js line 170",
+                "data":err,
+                "request":{
+                    body
                 }
             })
-        }
+        })
     })
     router.delete('/urls/:id', (req, res)=>{
         req.body.id = req.params.id
@@ -122,17 +128,19 @@ module.exports = (express, log)=>{
                     body
                 }
             })
-        }), (err) =>{
+        }, (err) =>{
             res.status(500).json(err)
+            let body = req.body
             log.debug({
-                "type": "ERROR",
-                "msg": "Could not delete URL based on ID",
-                "location" : "app.js line 107",
-                "data":{
-                    err
+                "type": "error",
+                "msg": "Could not update short URL by ID",
+                "location" : "app.js line 170",
+                "data":err,
+                "request":{
+                    body
                 }
             })
-        }
+        })
     })
     // post /api/v1/urls creates a new shortened link
     router.post('/urls',(req, res)=>{
@@ -153,17 +161,19 @@ module.exports = (express, log)=>{
                     body
                 }
             })
-        }), (err)=>{
+        }, (err)=>{
             res.status(500).json(err)
+            let body = req.body
             log.debug({
-                "type": "ERROR",
-                "msg": "Could not create short URL",
-                "location" : "app.js line 138",
-                "data":{
-                    err
+                "type": "error",
+                "msg": "Could not update short URL by ID",
+                "location" : "app.js line 170",
+                "data":err,
+                "request":{
+                    body
                 }
             })
-        }
+        })
     })
 
     // update url by ID
@@ -173,12 +183,14 @@ module.exports = (express, log)=>{
         // update and display info or error
         url.update(req.body, (err)=>{
             res.status(500).json(err)
+            let body = req.body
             log.debug({
-                "type": "ERROR",
+                "type": "error",
                 "msg": "Could not update short URL by ID",
                 "location" : "app.js line 170",
-                "data":{
-                    err
+                "data":err,
+                "request":{
+                    body
                 }
             })
         }, (data)=>{
@@ -232,12 +244,14 @@ module.exports = (express, log)=>{
             })
         }, (err) =>{
             res.status(500).json(err)
+            let body = req.body
             log.debug({
-                "type": "ERROR",
-                "msg": "Could not create a new User",
-                "location" : "app.js line 201",
-                "data":{
-                    err
+                "type": "error",
+                "msg": "Could not update short URL by ID",
+                "location" : "app.js line 170",
+                "data":err,
+                "request":{
+                    body
                 }
             })
         })
