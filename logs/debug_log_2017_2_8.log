@@ -14,3 +14,202 @@ Listening to Server on Port 3000
 Event at 12:39:10 @ server.js line 34
 SUCCESS
 Listening to Server on Port 3000
+
+**********
+Event at 12:44:2 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
+
+**********
+Event at 12:44:10 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
+
+**********
+Event at 12:44:37 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
+
+**********
+Event at 12:50:43 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
+
+**********
+Event at 12:51:32 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
+
+**********
+Event at 12:52:12 @ app.js line 144
+SUCCESS
+Updated short URL by ID
+Returned Data: 
+--   data :  url : amazon.com 
+     id :1
+     tynyUrl : tyny.io/7fdcdf0 
+     shortUrl : 7fdcdf0 
+     key : 43a995d29e 
+     createdAt : 2017-02-05T19:49:59.000Z 
+     updatedAt : 2017-02-08T17:52:12.000Z   
+Requested Data: 
+--   body :  url : amazon.com 
+     key : 43a995d29e 
+     id : 1   
+
+**********
+Event at 12:53:9 @ app.js line 19
+SUCCESS
+Returned all URL's
+
+**********
+Event at 12:53:22 @ app.js line 144
+SUCCESS
+Updated short URL by ID
+Returned Data: 
+--   data :  url : google.com 
+     id :1
+     tynyUrl : tyny.io/7fdcdf0 
+     shortUrl : 7fdcdf0 
+     key : 43a995d29e 
+     createdAt : 2017-02-05T19:49:59.000Z 
+     updatedAt : 2017-02-08T17:53:22.000Z   
+Requested Data: 
+--   body :  url : google.com 
+     key : 43a995d29e 
+     id : 1   
+
+**********
+Event at 12:54:54 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
+
+**********
+Event at 12:54:56 @ app.js line 118
+SUCCESS
+Created short URL
+Returned Data: 
+--   data :  id :7
+     url : amazon.com 
+     tynyUrl : tyny.io/21a9315 
+     shortUrl : 21a9315 
+     key : 43a995d29e 
+     updatedAt : 2017-02-08T17:54:56.000Z 
+     createdAt : 2017-02-08T17:54:56.000Z   
+Requested Data: 
+--   body :  url : amazon.com 
+     key : 43a995d29e   
+
+**********
+Event at 12:55:42 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
+
+**********
+Event at 12:55:49 @ app.js line 19
+SUCCESS
+Returned all URL's
+
+**********
+Event at 12:57:14 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
+
+**********
+Event at 12:57:20 @ app.js line 19
+SUCCESS
+Returned all URL's
+Returned Data: 
+--   data :[  url : google.com 
+     id :1
+     tynyUrl : tyny.io/7fdcdf0 
+     shortUrl : 7fdcdf0 
+     key : 43a995d29e 
+     createdAt : 2017-02-05T19:49:59.000Z 
+     updatedAt : 2017-02-08T17:53:22.000Z  
+      url : daniel-cobb.com 
+     id :2
+     tynyUrl : tyny.io/04f580b 
+     shortUrl : 04f580b 
+     key : 2 
+     createdAt : 2017-02-05T19:51:46.000Z 
+     updatedAt : 2017-02-05T19:51:46.000Z  
+      url : https://github.com/DPCobb/URL-Shortener 
+     id :4
+     tynyUrl : tyny.io/8d10273 
+     shortUrl : 8d10273 
+     key : 43a995d29e 
+     createdAt : 2017-02-05T20:16:49.000Z 
+     updatedAt : 2017-02-05T20:16:49.000Z  
+      url : amazon.com 
+     id :5
+     tynyUrl : tyny.io/21a9315 
+     shortUrl : 21a9315 
+     key : 43a995d29e 
+     createdAt : 2017-02-08T17:53:29.000Z 
+     updatedAt : 2017-02-08T17:53:29.000Z  
+      url : amazon.com 
+     id :6
+     tynyUrl : tyny.io/21a9315 
+     shortUrl : 21a9315 
+     key : 43a995d29e 
+     createdAt : 2017-02-08T17:54:00.000Z 
+     updatedAt : 2017-02-08T17:54:00.000Z  
+      url : amazon.com 
+     id :7
+     tynyUrl : tyny.io/21a9315 
+     shortUrl : 21a9315 
+     key : 43a995d29e 
+     createdAt : 2017-02-08T17:54:56.000Z 
+     updatedAt : 2017-02-08T17:54:56.000Z  ] 
+Requested Data: 
+--   body :   
+
+**********
+Event at 12:58:35 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
+
+**********
+Event at 13:00:4 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
+
+**********
+Event at 13:00:38 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
+
+**********
+Event at 13:03:22 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
+
+**********
+Event at 13:03:56 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
+
+**********
+Event at 13:04:38 @ app.js line 77
+SUCCESS
+Returned URL's based on User Key
+Returned Data: 
+--   data :  url : daniel-cobb.com 
+     id :2
+     tynyUrl : tyny.io/04f580b 
+     shortUrl : 04f580b 
+     key : 2 
+     createdAt : 2017-02-05T19:51:46.000Z 
+     updatedAt : 2017-02-05T19:51:46.000Z   
+Requested Data: 
+--   body :  id : 2   
+
+**********
+Event at 13:04:43 @ app.js line 77
+SUCCESS
+Returned URL's based on User Key
+Returned Data: 
+--   data :null 
+Requested Data: 
+--   body :  id : 5   

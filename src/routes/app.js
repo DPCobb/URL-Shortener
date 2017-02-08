@@ -21,19 +21,23 @@ module.exports = (express, log)=>{
         url.findAll((data)=>{
             //return the json info for the last url
             res.status(200).json(data)
+            let body = req.body
             log.debug({
                 "type": "success",
                 "msg": "Returned all URL's",
                 "location" : "app.js line 19",
+                "data":{
+                    data
+                }
             })
         }), (err) =>{
-            res.status(500).json(data)
+            res.status(500).json(err)
             log.debug({
                 "type": "ERROR",
                 "msg": "Could not retrieve URL's",
                 "location" : "app.js line 19",
                 "data":{
-                    data
+                    err
                 }
             })
         }
@@ -49,7 +53,7 @@ module.exports = (express, log)=>{
             log.debug({
                 "type": "success",
                 "msg": "Returned URL based on ID",
-                "location" : "app.js line 42",
+                "location" : "app.js line 46",
                 "data":{
                     data
                 },
@@ -58,13 +62,13 @@ module.exports = (express, log)=>{
                 }
             })
         }), (err) =>{
-            res.status(500).json(data)
+            res.status(500).json(err)
             log.debug({
                 "type": "ERROR",
                 "msg": "Could not retrieve URL based on ID",
-                "location" : "app.js line 42",
+                "location" : "app.js line 46",
                 "data":{
-                    data
+                    err
                 }
             })
         }
@@ -76,8 +80,28 @@ module.exports = (express, log)=>{
         url.findOneUser(req.body,(data)=>{
             //return the json info for the requested key
             res.status(200).json(data)
+            let body = req.body
+            log.debug({
+                "type": "success",
+                "msg": "Returned URL's based on User Key",
+                "location" : "app.js line 77",
+                "data":{
+                    data
+                },
+                "request":{
+                    body
+                }
+            })
         }), (err) =>{
-            res.status(500).json(data)
+            res.status(500).json(err)
+            log.debug({
+                "type": "ERROR",
+                "msg": "Could not retrieve URL's based on User Key",
+                "location" : "app.js line 77",
+                "data":{
+                    err
+                }
+            })
         }
     })
     router.delete('/urls/:id', (req, res)=>{
@@ -86,18 +110,60 @@ module.exports = (express, log)=>{
         url.destroy(req.body,(data)=>{
             //return the json info for the requested url
             res.status(200).json(data)
+            let body = req.body
+            log.debug({
+                "type": "success",
+                "msg": "Deleted URL based on ID",
+                "location" : "app.js line 107",
+                "data":{
+                    data
+                },
+                "request":{
+                    body
+                }
+            })
         }), (err) =>{
-            res.status(500).json(data)
+            res.status(500).json(err)
+            log.debug({
+                "type": "ERROR",
+                "msg": "Could not delete URL based on ID",
+                "location" : "app.js line 107",
+                "data":{
+                    err
+                }
+            })
         }
     })
     // post /api/v1/urls creates a new shortened link
     router.post('/urls',(req, res)=>{
         // get the shortened url
         let shortUrl = short(req)
-        // display new url
-        res.status(200).json(shortUrl)
         // add to db
-        url.create(shortUrl)
+        url.create(shortUrl, (data)=>{
+            res.status(200).json(data)
+            let body = req.body
+            log.debug({
+                "type": "success",
+                "msg": "Created short URL",
+                "location" : "app.js line 138",
+                "data":{
+                    data
+                },
+                "request":{
+                    body
+                }
+            })
+        }), (err)=>{
+            res.status(500).json(err)
+            log.debug({
+                "type": "ERROR",
+                "msg": "Could not create short URL",
+                "location" : "app.js line 138",
+                "data":{
+                    err
+                }
+            })
+        }
     })
 
     // update url by ID
@@ -107,8 +173,28 @@ module.exports = (express, log)=>{
         // update and display info or error
         url.update(req.body, (err)=>{
             res.status(500).json(err)
+            log.debug({
+                "type": "ERROR",
+                "msg": "Could not update short URL by ID",
+                "location" : "app.js line 170",
+                "data":{
+                    err
+                }
+            })
         }, (data)=>{
             res.status(200).json(data)
+            let body = req.body
+            log.debug({
+                "type": "success",
+                "msg": "Updated short URL by ID",
+                "location" : "app.js line 170",
+                "data":{
+                    data
+                },
+                "request":{
+                    body
+                }
+            })
         })
     })
 
@@ -132,8 +218,28 @@ module.exports = (express, log)=>{
         // add to db
         url.createUser(data,(success)=>{
             res.status(200).json(data)
+            let body = req.body
+            log.debug({
+                "type": "success",
+                "msg": "Created new User Key",
+                "location" : "app.js line 201",
+                "data":{
+                    data
+                },
+                "request":{
+                    body
+                }
+            })
         }, (err) =>{
             res.status(500).json(err)
+            log.debug({
+                "type": "ERROR",
+                "msg": "Could not create a new User",
+                "location" : "app.js line 201",
+                "data":{
+                    err
+                }
+            })
         })
     })
     // return the router
