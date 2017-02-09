@@ -1,7 +1,7 @@
 # Tyny
 A node.js url shortener API.
 - [Install](#install)
-- [Usage](#using the app)
+- [Usage](#using-the-app)
 - [Create A User](#create-user)
 - [API Endpoints](#api-endpoints)
 - [Routes](#routes)
