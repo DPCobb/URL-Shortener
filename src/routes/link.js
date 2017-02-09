@@ -10,15 +10,20 @@ const url = require('../models/url.js');
 const log = require('../modules/debug.js');
 
 module.exports = (express) => {
+  class dataHandle {
+    constructor(data) {
+      this.id = data;
+    }
+  }
     // call router method
   const router = express.Router();
 
   // redirect based on short url, used to redirect for tyny.io/URL
   router.get('/:url', (req, res) => {
       // get the url param
-    req.body.id = req.params.url;
+    const id = new dataHandle(req.params.url);
     // get one url back by short url value
-    url.findOneUrl(req.body, (data) => {
+    url.findOneUrl(id, (data) => {
       // set the redirect target
       const target = data.url;
       // if the url has http:// or https://

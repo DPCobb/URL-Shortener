@@ -9,6 +9,22 @@
 const fs = require('fs');
 require('dotenv').config();
 
+class msgHandle {
+  constructor(data) {
+    this.type = data.type;
+    this.verify = data.data;
+    this.msg = data.msg;
+    this.location = data.location;
+    this.request = data.request;
+  }
+}
+
+class loc {
+  constructor(data) {
+    this.loc = data;
+  }
+}
+
 module.exports = {
     // Create a date for log files
   getDate() {
@@ -50,7 +66,8 @@ module.exports = {
     }
   },
   // debug takes json data, logs to console and to log file
-  debug(data) {
+  debug(dataIn) {
+    const data = new msgHandle(dataIn);
     const debug = process.env.DEBUG;
     // if debug is true
     if (debug === 'true') {
@@ -68,7 +85,7 @@ module.exports = {
       // set up type title : error, success, warning
       let type = defaultColor + data.type.toUpperCase() + resetColor;
       // check to see if there is data, if data isn't null and if the type is not error
-      if (data.data && !data.data.data && data.type !== 'error') {
+      if (data.verify && !data.verify.data && data.type !== 'error') {
           // if you get here the type changes to warning
         data.type = 'warning - request returned null';
       }
@@ -87,12 +104,12 @@ module.exports = {
       // logFile doesn't print color but will print after \x1b ex [32mSUCCESS[0m will print
       let logFile = '\n**********\nEvent at ' + time + ' @ ' + data.location + '\n' + data.type.toUpperCase() + '\n' + data.msg;
       // if not an error display returned data from json
-      if (data.data && data.type !== 'error') {
-        logData = '\nReturned Data: \n-- ' + JSON.stringify(data.data).split(',').join('\n    ').replace(/[{}"]/g, ' ');
+      if (data.verify && data.type !== 'error') {
+        logData = '\nReturned Data: \n-- ' + JSON.stringify(data.verify).split(',').join('\n    ').replace(/[{}"]/g, ' ');
       }
       // if it is an error return the error string
       if (data.type === 'error') {
-        logData = '\nReturned Data: \n ' + data.data;
+        logData = '\nReturned Data: \n ' + data.verify;
       }
       // if request info is sent display the request info
       if (data.request) {
@@ -116,19 +133,21 @@ module.exports = {
   },
   /* Msg acts like a standard console.log if debug is true and debug_console
   is true, and doesn't append to log file */
-  msg(data, loc) {
-    if (loc === undefined) {
-      loc = 'No Location Info';
+  msg(data, locIn) {
+    const location = new loc(locIn);
+    if (location.loc === undefined) {
+      location.loc = 'No Location Info';
     }
     const debug = process.env.DEBUG;
     const consoleDebug = process.env.DEBUG_CONSOLE;
     if (debug === 'true' && consoleDebug === 'true') {
-      console.log('\x1b[37mMSG:\x1b[0m ' + data + '\n-- @ ' + loc);
+      console.log('\x1b[37mMSG:\x1b[0m ' + data + '\n-- @ ' + location.loc);
     }
-    this.saveMsg(data, loc);
+    this.saveMsg(data, location.loc);
   },
   // saves msg method to a seperate log
-  saveMsg(data, loc) {
+  saveMsg(data, locIn) {
+    const location = new loc(locIn);
     // get variables
     const debug = process.env.DEBUG;
     const msgSave = process.env.DEBUG_MSG_LOG;
@@ -136,13 +155,13 @@ module.exports = {
     const date = this.getDate();
     const time = this.getTime();
     // if no location information was sent
-    if (loc === undefined) {
-      loc = 'No Location Info';
+    if (location.loc === undefined) {
+      location.loc = 'No Location Info';
     }
     // if both debug and msgSave are true
     if (debug === 'true' && msgSave === 'true') {
       // create the entry
-      const msgLog = '-- MSG @ ' + time + ' (' + loc + '): ' + data + '\n';
+      const msgLog = '-- MSG @ ' + time + ' (' + location.loc + '): ' + data + '\n';
       // append entry to todays log
       fs.appendFile('./logs/debug_MSG_' + date + '.log', msgLog, (err) => {
         if (err) throw err;

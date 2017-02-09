@@ -79,6 +79,6 @@ exports.update = (data, err, success) => {
       id: data.id,
     },
   }).then((urlData) => {
-    urlData.updateAttributes(data).then(success).catch(err);
+    urlData.updateAttributes(data.body).then(success).catch(err);
   }).catch(err);
 };

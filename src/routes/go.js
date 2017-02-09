@@ -9,15 +9,21 @@
 const url = require('../models/url.js');
 const log = require('../modules/debug.js');
 
+class dataHandle {
+  constructor(data) {
+    this.id = data;
+  }
+}
+
 module.exports = (express) => {
   // call router method
   const router = express.Router();
   // redirect based on id
   router.get('/:id', (req, res) => {
     // get the url param
-    req.body.id = req.params.id;
+    const id = new dataHandle(req.params.id);
     // get one url back by id
-    url.findOne(req.body, (data) => {
+    url.findOne(id, (data) => {
       // set the target
       const target = data.url;
       // if the target url has http or https
@@ -62,9 +68,9 @@ module.exports = (express) => {
   // redirect based on short url
   router.get('/:prefix/:url', (req, res) => {
     // get the url param
-    req.body.id = req.params.url;
+    const id = new dataHandle(req.params.url);
     // get one url back by short url value
-    url.findOneUrl(req.body, (data) => {
+    url.findOneUrl(id, (data) => {
       // set the redirect target
       const target = data.url;
       // if the url has http:// or https://

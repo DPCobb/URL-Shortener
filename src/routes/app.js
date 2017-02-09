@@ -12,6 +12,17 @@ const short = require('../modules/shortener.js');
 const url = require('../models/url.js');
 // export the router
 module.exports = (express, log) => {
+  class dataHandle {
+    constructor(data) {
+      this.id = data;
+    }
+  }
+  class updatePost {
+    constructor(id, body) {
+      this.id = id;
+      this.body = body;
+    }
+  }
     // call router method
   const router = express.Router();
 
@@ -45,12 +56,11 @@ module.exports = (express, log) => {
   });
   // get url by id
   router.get('/urls/:id', (req, res) => {
-    req.body.id = req.params.id;
+    const id = new dataHandle(req.params.id);
     // get one url back by ud
-    url.findOne(req.body, (data) => {
+    url.findOne(id, (data) => {
       // return the json info for the requested url
       res.status(200).json(data);
-      const body = req.body;
       log.debug({
         type: 'success',
         msg: 'Returned URL based on ID',
@@ -59,7 +69,7 @@ module.exports = (express, log) => {
           data,
         },
         request: {
-          body,
+          id,
         },
       });
     }, (err) => {
@@ -78,12 +88,11 @@ module.exports = (express, log) => {
   });
     // get url by user key
   router.get('/urls/user/:id', (req, res) => {
-    req.body.id = req.params.id;
+    const id = new dataHandle(req.params.id);
     // get one url back by user key
-    url.findOneUser(req.body, (data) => {
+    url.findOneUser(id, (data) => {
       // return the json info for the requested key
       res.status(200).json(data);
-      const body = req.body;
       log.debug({
         type: 'success',
         msg: "Returned URL's based on User Key",
@@ -92,30 +101,28 @@ module.exports = (express, log) => {
           data,
         },
         request: {
-          body,
+          id,
         },
       });
     }, (err) => {
       res.status(500).json(err);
-      const body = req.body;
       log.debug({
         type: 'error',
         msg: 'Could not update short URL by ID',
         location: 'app.js line 81 GET:/urls/user/:id',
         data: err,
         request: {
-          body,
+          id,
         },
       });
     });
   });
   router.delete('/urls/:id', (req, res) => {
-    req.body.id = req.params.id;
+    const id = new dataHandle(req.params.id);
         // get one url back by ud
-    url.destroy(req.body, (data) => {
+    url.destroy(id, (data) => {
       // return the json info for the requested url
       res.status(200).json(data);
-      const body = req.body;
       log.debug({
         type: 'success',
         msg: 'Deleted URL based on ID',
@@ -124,7 +131,7 @@ module.exports = (express, log) => {
           data,
         },
         request: {
-          body,
+          id,
         },
       });
     }, (err) => {
@@ -178,18 +185,17 @@ module.exports = (express, log) => {
     // update url by ID
   router.post('/urls/:id', (req, res) => {
     // get the id
-    req.body.id = req.params.id;
+    const update = new updatePost(req.params.id, req.body);
     // update and display info or error
-    url.update(req.body, (err) => {
+    url.update(update, (err) => {
       res.status(500).json(err);
-      const body = req.body;
       log.debug({
         type: 'error',
         msg: 'Could not update short URL by ID',
         location: 'app.js line 180 POST:/urls/:id',
         data: err,
         request: {
-          body,
+          update,
         },
       });
     }, (data) => {
