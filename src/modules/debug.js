@@ -121,10 +121,13 @@ module.exports = {
     },
     // Msg acts like a standard console.log if debug is true and debug_console is true, and doesn't append to log file
     msg(data, loc) {
+        if(loc === undefined){
+            loc = 'No Location Info'
+        }
         let debug = process.env.DEBUG
         let consoleDebug = process.env.DEBUG_CONSOLE
         if (debug === 'true' && consoleDebug === 'true'){
-            console.log("\x1b[37mMSG:\x1b[0m " + data)
+            console.log("\x1b[37mMSG:\x1b[0m " + data + '\n-- @ ' + loc)
         }
         this.saveMsg(data, loc)
     },
