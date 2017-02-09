@@ -1,8 +1,8 @@
 /**
  *
  * Daniel Cobb
- * 2-4-2017
- * Assignment 2: Dynamic API
+ * 2-7-2017
+ * Assignment 3: Logging Tool
  *
  */
 let log = require('../modules/debug.js')
