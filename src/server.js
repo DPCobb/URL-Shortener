@@ -36,4 +36,5 @@ app.listen(3000, () => {
         "location" : "server.js line 34",
     })
     log.msg('Hello World from log.msg')
+    log.msg('Server Active, port 3000', 'app.js')
 })

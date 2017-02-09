@@ -90,11 +90,27 @@ module.exports = {
         }
     },
     // Msg acts like a standard console.log if debug is true and debug_console is true, and doesn't append to log file
-    msg(data) {
+    msg(data, loc) {
         let debug = process.env.DEBUG
         let consoleDebug = process.env.DEBUG_CONSOLE
         if (debug === 'true' && consoleDebug === 'true'){
             console.log("\x1b[37mMSG:\x1b[0m " + data)
+        }
+        this.saveMsg(data, loc)
+    },
+    saveMsg(data, loc) {
+        let debug = process.env.DEBUG
+        let msgSave = process.env.DEBUG_MSG_LOG
+        let date = this.getDate()
+        let time = this.getTime()
+        if(loc === undefined){
+            loc = 'No Location Info'
+        }
+        if(debug && msgSave) {
+            msgLog = '-- MSG @ ' + time + ' ('+ loc + '): ' + data + '\n'
+            fs.appendFile('./logs/debug_MSG_'+date+'.log', msgLog, (err) => {
+                if (err) throw err;
+            })
         }
     }
  }
