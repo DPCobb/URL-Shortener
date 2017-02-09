@@ -1,12 +1,15 @@
 /**
  *
  * Daniel Cobb
- * 2-4-2017
- * Assignment 2: Dynamic API
+ * 2-7-2017
+ * Assignment 3: Logging Tool
  *
  */
 
-// require express and body-parser
+// require debug tool, express, and body-parser
+let log = require('./modules/debug.js')
+// Show debug warning
+log.debugWarn()
 let express = require('express')
 let body_parser = require('body-parser')
 // instantiate express
@@ -19,13 +22,19 @@ app.use(body_parser.urlencoded({
 }))
 
 // set up the route prefixed with /api/v1
-app.use('/api/v1/', require('./routes/app.js')(express))
+app.use('/api/v1/', require('./routes/app.js')(express, log))
 // set up /go/ route
-app.use('/go/', require('./routes/go.js')(express))
+app.use('/go/', require('./routes/go.js')(express, log))
 // set up direct route for redirect to link
-app.use('/', require('./routes/link.js')(express))
+app.use('/', require('./routes/link.js')(express, log))
 
 // listen on port 3000
 app.listen(3000, () => {
-    console.log('Hello World.')
+    log.debug({
+        "type": "success",
+        "msg": "Listening to Server on Port 3000",
+        "location" : "server.js line 34",
+    })
+    log.msg('Hello World from app.listen')
+    log.msg('Server Active, port 3000', 'app.js')
 })

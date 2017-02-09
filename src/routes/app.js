@@ -1,8 +1,8 @@
 /**
  *
  * Daniel Cobb
- * 2-4-2017
- * Assignment 2: Dynamic API
+ * 2-7-2017
+ * Assignment 3: Logging Tool
  *
  */
 
@@ -11,7 +11,7 @@ const short = require('../modules/shortener.js')
 // require lastUrl model
 const url = require('../models/url.js')
 // export the router
-module.exports = (express)=>{
+module.exports = (express, log)=>{
     // call router method
     let router = express.Router()
 
@@ -21,9 +21,28 @@ module.exports = (express)=>{
         url.findAll((data)=>{
             //return the json info for the last url
             res.status(200).json(data)
-        }), (err) =>{
-            res.status(500).json(data)
-        }
+            let body = req.body
+            log.debug({
+                "type": "success",
+                "msg": "Returned all URL's",
+                "location" : "app.js line 19 GET:/urls",
+                "data":{
+                    data
+                }
+            })
+        }, (err) =>{
+            res.status(500).json(err)
+            let body = req.body
+            log.debug({
+                "type": "error",
+                "msg": "Could not update short URL by ID",
+                "location" : "app.js line 19 GET:/urls",
+                "data":err,
+                "request":{
+                    body
+                }
+            })
+        })
     })
     // get url by id
     router.get('/urls/:id', (req, res)=>{
@@ -32,9 +51,31 @@ module.exports = (express)=>{
         url.findOne(req.body,(data)=>{
             //return the json info for the requested url
             res.status(200).json(data)
-        }), (err) =>{
-            res.status(500).json(data)
-        }
+            let body = req.body
+            log.debug({
+                "type": "success",
+                "msg": "Returned URL based on ID",
+                "location" : "app.js line 48 GET:/urls/:id",
+                "data":{
+                    data
+                },
+                "request":{
+                    body
+                }
+            })
+        }, (err) => {
+            res.status(500).json(err)
+            let body = req.body
+            log.debug({
+                "type": "error",
+                "msg": "Could not update short URL by ID",
+                "location" : "app.js line 48 GET:/urls/:id",
+                "data":err,
+                "request":{
+                    body
+                }
+            })
+        })
     })
     // get url by user key
     router.get('/urls/user/:id', (req, res)=>{
@@ -43,9 +84,31 @@ module.exports = (express)=>{
         url.findOneUser(req.body,(data)=>{
             //return the json info for the requested key
             res.status(200).json(data)
-        }), (err) =>{
-            res.status(500).json(data)
-        }
+            let body = req.body
+            log.debug({
+                "type": "success",
+                "msg": "Returned URL's based on User Key",
+                "location" : "app.js line 81 GET:/urls/user/:id",
+                "data":{
+                    data
+                },
+                "request":{
+                    body
+                }
+            })
+        }, (err) =>{
+            res.status(500).json(err)
+            let body = req.body
+            log.debug({
+                "type": "error",
+                "msg": "Could not update short URL by ID",
+                "location" : "app.js line 81 GET:/urls/user/:id",
+                "data":err,
+                "request":{
+                    body
+                }
+            })
+        })
     })
     router.delete('/urls/:id', (req, res)=>{
         req.body.id = req.params.id
@@ -53,18 +116,64 @@ module.exports = (express)=>{
         url.destroy(req.body,(data)=>{
             //return the json info for the requested url
             res.status(200).json(data)
-        }), (err) =>{
-            res.status(500).json(data)
-        }
+            let body = req.body
+            log.debug({
+                "type": "success",
+                "msg": "Deleted URL based on ID",
+                "location" : "app.js line 113 DELETE:/urls/:id",
+                "data":{
+                    data
+                },
+                "request":{
+                    body
+                }
+            })
+        }, (err) =>{
+            res.status(500).json(err)
+            let body = req.body
+            log.debug({
+                "type": "error",
+                "msg": "Could not update short URL by ID",
+                "location" : "app.js line 113 DELETE:/urls/:id",
+                "data":err,
+                "request":{
+                    body
+                }
+            })
+        })
     })
     // post /api/v1/urls creates a new shortened link
     router.post('/urls',(req, res)=>{
         // get the shortened url
         let shortUrl = short(req)
-        // display new url
-        res.status(200).json(shortUrl)
         // add to db
-        url.create(shortUrl)
+        url.create(shortUrl, (data)=>{
+            res.status(200).json(data)
+            let body = req.body
+            log.debug({
+                "type": "success",
+                "msg": "Created short URL",
+                "location" : "app.js line 146 POST:/urls",
+                "data":{
+                    data
+                },
+                "request":{
+                    body
+                }
+            })
+        }, (err)=>{
+            res.status(500).json(err)
+            let body = req.body
+            log.debug({
+                "type": "error",
+                "msg": "Could not update short URL by ID",
+                "location" : "app.js line 146 POST:/urls",
+                "data":err,
+                "request":{
+                    body
+                }
+            })
+        })
     })
 
     // update url by ID
@@ -74,8 +183,30 @@ module.exports = (express)=>{
         // update and display info or error
         url.update(req.body, (err)=>{
             res.status(500).json(err)
+            let body = req.body
+            log.debug({
+                "type": "error",
+                "msg": "Could not update short URL by ID",
+                "location" : "app.js line 180 POST:/urls/:id",
+                "data":err,
+                "request":{
+                    body
+                }
+            })
         }, (data)=>{
             res.status(200).json(data)
+            let body = req.body
+            log.debug({
+                "type": "success",
+                "msg": "Updated short URL by ID",
+                "location" : "app.js line 180 POST:/urls/:id",
+                "data":{
+                    data
+                },
+                "request":{
+                    body
+                }
+            })
         })
     })
 
@@ -99,8 +230,30 @@ module.exports = (express)=>{
         // add to db
         url.createUser(data,(success)=>{
             res.status(200).json(data)
+            let body = req.body
+            log.debug({
+                "type": "success",
+                "msg": "Created new User Key",
+                "location" : "app.js line 213 POST:/create",
+                "data":{
+                    data
+                },
+                "request":{
+                    body
+                }
+            })
         }, (err) =>{
             res.status(500).json(err)
+            let body = req.body
+            log.debug({
+                "type": "error",
+                "msg": "Could not update short URL by ID",
+                "location" : "app.js line 213 POST:/create",
+                "data":err,
+                "request":{
+                    body
+                }
+            })
         })
     })
     // return the router

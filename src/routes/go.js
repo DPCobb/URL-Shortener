@@ -1,12 +1,13 @@
 /**
  *
  * Daniel Cobb
- * 2-4-2017
- * Assignment 2: Dynamic API
+ * 2-7-2017
+ * Assignment 3: Logging Tool
  *
  */
 
 const url = require('../models/url.js')
+let log = require('../modules/debug.js')
 module.exports = (express)=>{
     // call router method
     let router = express.Router()
@@ -23,11 +24,40 @@ module.exports = (express)=>{
             if(target.includes('http') || target.includes('https')){
                 // redirect to target
                 res.redirect(target)
+                log.debug({
+                    "type": "success",
+                    "msg": "Redirected User to external URL",
+                    "location" : "go.js line 15 GET:/:id",
+                    "request":{
+                        target
+                    }
+                })
             }
             // if not add http and redirect
             else{
                 res.redirect('http://'+target)
+                log.debug({
+                    "type": "success",
+                    "msg": "Redirected User to external URL",
+                    "location" : "go.js line 15 GET:/:id",
+                    "request":{
+                        target
+                    }
+                })
             }
+        }, (err) =>{
+            log.debug({
+                "type": "error",
+                "msg": "Redirect User to external URL failed",
+                "location" : "go.js line 15 GET:/:id",
+                "data":{
+                    err
+                },
+                "request":{
+                    target
+                }
+            })
+
         })
     })
 
@@ -43,12 +73,41 @@ module.exports = (express)=>{
             if(target.includes('http') || target.includes('https')){
                 // redirect to target
                 res.redirect(target)
+                log.debug({
+                    "type": "success",
+                    "msg": "Redirected User to external URL",
+                    "location" : "go.js line 65 GET:/:prefix/:url",
+                    "request":{
+                        target
+                    }
+                })
             }
             // if not add http and redirect
             else{
                 res.redirect('http://'+target)
+                log.debug({
+                    "type": "success",
+                    "msg": "Redirected User to external URL",
+                    "location" : "go.js line 65 GET:/:prefix/:url",
+                    "request":{
+                        target
+                    }
+                })
             }
-        })
+        }), (err)=>{
+            log.debug({
+                "type": "error",
+                "msg": "Redirect User to external URL failed",
+                "location" : "go.js line 15 GET:/:prefix/:url",
+                "data":{
+                    err
+                },
+                "request":{
+                    target
+                }
+            })
+
+        }
     })
     return router
 }
