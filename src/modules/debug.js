@@ -89,7 +89,7 @@ module.exports = {
 
         }
     },
-    // Msg acts like a standard console.log if debug is true, and doesn't append to log file
+    // Msg acts like a standard console.log if debug is true and debug_console is true, and doesn't append to log file
     msg(data) {
         let debug = process.env.DEBUG
         let consoleDebug = process.env.DEBUG_CONSOLE
