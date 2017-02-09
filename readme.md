@@ -155,7 +155,7 @@ Similar outputs will be created in the log file with the addition of the time of
 -- MSG @ 12:11:28 (app.js): Server Active, port 3000
 ```
 This method is an easy way to troubleshoot features and methods or to test if data is being passed. It could also
-be used as strictly a log to keep track of what endpoints are being accessed. 
+be used as strictly a log. 
 ## Create User
 Although, this step is entirely optional it will allow users to search based on a user key.
 To create a user send a POST request to /api/v1/create with the following data:
