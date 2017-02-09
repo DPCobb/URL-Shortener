@@ -1,7 +1,7 @@
 # Tyny
 A node.js url shortener API.
 - [Install](#install)
-- [Usage](#Using the App)
+- [Usage](#using the app)
 - [Create A User](#create-user)
 - [API Endpoints](#api-endpoints)
 - [Routes](#routes)
@@ -42,7 +42,7 @@ DEBUG = true
 DEBUG_CONSOLE = true
 DEBUG_MSG_LOG = true
 ```
-## Using The app
+## Using the App
 There are two ways to run the app, with debug mode on or off. Running with all settings on true will create a daily log for both methods included and send messages to the console. Your .env file should contain the following
 entries:
 ```
@@ -155,7 +155,7 @@ Similar outputs will be created in the log file with the addition of the time of
 -- MSG @ 12:11:28 (app.js): Server Active, port 3000
 ```
 This method is an easy way to troubleshoot features and methods or to test if data is being passed. It could also
-be used as strictly a log. 
+be used as strictly a log.
 ## Create User
 Although, this step is entirely optional it will allow users to search based on a user key.
 To create a user send a POST request to /api/v1/create with the following data:
