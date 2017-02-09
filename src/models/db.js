@@ -60,7 +60,7 @@ const user = sequelize.define('user', {
     primaryKey: true,
   },
   // user pass
-  pass: {
+  passw: {
     type: Sequelize.STRING,
   },
   // user key

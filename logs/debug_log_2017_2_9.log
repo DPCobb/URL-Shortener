@@ -79,3 +79,23 @@ Listening to Server on Port 3000
 Event at 14:23:52 @ server.js line 34
 SUCCESS
 Listening to Server on Port 3000
+
+**********
+Event at 15:37:53 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
+
+**********
+Event at 15:38:4 @ app.js line 48 GET:/urls/:id
+SUCCESS
+Returned URL based on ID
+Returned Data: 
+--   data :  url : google.com 
+     id :1
+     tynyUrl : tyny.io/7fdcdf0 
+     shortUrl : 7fdcdf0 
+     key : 43a995d29e 
+     createdAt : 2017-02-05T19:49:59.000Z 
+     updatedAt : 2017-02-08T17:53:22.000Z   
+Requested Data: 
+--   body :  id : 1   
