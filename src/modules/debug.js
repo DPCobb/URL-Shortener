@@ -9,17 +9,23 @@
 const fs = require('fs');
 require('dotenv').config();
 
+// Handles console.logs without an ESLint warning
 class con {
+  // method log writes the msg to stdout
   log(data) {
+    // data is the message
     this.data = data;
+    // write to console
     process.stdout.write(`${this.data}\n`);
   }
 }
-
+// Instantiate con class
 const cons = new con();
 
+// handles the log data for the debugger
 class msgHandle {
   constructor(data) {
+    // Get request/response data from passed in event
     this.type = data.type;
     this.verify = data.data;
     this.msg = data.msg;
@@ -28,8 +34,11 @@ class msgHandle {
   }
 }
 
+// Location of a console.log event, used to check if location is undefined
+// in msg and saveMsg methods
 class loc {
   constructor(data) {
+    // location information
     this.loc = data;
   }
 }
@@ -143,8 +152,11 @@ module.exports = {
   /* Msg acts like a standard console.log if debug is true and debug_console
   is true, and doesn't append to log file */
   msg(data, locIn) {
+    // instatiate loc class
     const location = new loc(locIn);
+    // check if location information was given
     if (location.loc === undefined) {
+      // if no location data change loc to no info msg
       location.loc = 'No Location Info';
     }
     const debug = process.env.DEBUG;
