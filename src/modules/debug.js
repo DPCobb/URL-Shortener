@@ -9,6 +9,15 @@
 const fs = require('fs');
 require('dotenv').config();
 
+class con {
+  log(data) {
+    this.data = data;
+    process.stdout.write(`${this.data}\n`);
+  }
+}
+
+const cons = new con();
+
 class msgHandle {
   constructor(data) {
     this.type = data.type;
@@ -62,7 +71,7 @@ module.exports = {
       // if debug is true, send warning msg
     const debug = process.env.DEBUG;
     if (debug === 'true') {
-      console.log('**************************************** \n Debugging Mode is Active!\n\n****************************************\n');
+      cons.log('**************************************** \n Debugging Mode is Active!\n\n****************************************\n');
     }
   },
   // debug takes json data, logs to console and to log file
@@ -126,7 +135,7 @@ module.exports = {
         if (err) throw err;
         const consoleDebug = process.env.DEBUG_CONSOLE;
         if (consoleDebug === 'true') {
-          console.log(logMsg);
+          cons.log(logMsg);
         }
       });
     }
@@ -141,7 +150,7 @@ module.exports = {
     const debug = process.env.DEBUG;
     const consoleDebug = process.env.DEBUG_CONSOLE;
     if (debug === 'true' && consoleDebug === 'true') {
-      console.log('\x1b[37mMSG:\x1b[0m ' + data + '\n-- @ ' + location.loc);
+      cons.log('\x1b[37mMSG:\x1b[0m ' + data + '\n-- @ ' + location.loc);
     }
     this.saveMsg(data, location.loc);
   },
