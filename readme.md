@@ -9,6 +9,7 @@ A node.js url shortener API.
 - [Get Requests](#get-requests)
 - [Delete Requests](#delete-requests)
 - [Go To Links](#accessing-links)
+- [Style Guide](#style-guide)
 - [Contributing](#contributing)
 
 ## Install
@@ -78,16 +79,16 @@ folder and will create daily logs for the debug method (debug_log_YYYY_M_D.log) 
 This method accepts a JSON object that should be structured the following way:
 ```
 log.debug({
-    "type": "success",
-    "msg": "Returned URL based on ID",
-    "location" : "app.js line 48 GET:/urls/:id",
-    "data":{
-        data
+    type: 'success',
+    msg: 'Returned URL based on ID',
+    location: 'app.js line 48 GET:/urls/:id',
+    data: {
+        data,
     },
-    "request":{
-        body
-    }
-})
+    request: {
+        body,
+    },
+});
 ```
 The type, msg, and location, fields are REQUIRED, data and request are optional. The types that should be used are: success, error, or warning. The msg can be any message you wish to send, the location
 should be information relevant to where this is occurring like file, line, and route information. The data field can also be
@@ -355,6 +356,41 @@ localhost:3000/go/tyny.io/7fdcdf0
 ```
 localhost:3000/7fdcdf0
 ```
+## Style Guide
+This project currently uses the Airbnb JS Style Guide found [here](https://github.com/airbnb/javascript).
+The easiest way to ensure contributions adhere to the same style guide is to use an IDE that supports an
+ESLint plugin. For example, [Atom](https://atom.io) supports ESLint with their package ['linter-eslint'](https://github.com/AtomLinter/linter-eslint). To ensure contributions adhere to the Airbnb style guide
+install ESLint, and install the following dev dependencies:
+```
+"eslint": "^3.15.0",
+"eslint-config-airbnb": "^14.1.0",
+"eslint-plugin-import": "^2.2.0",
+"eslint-plugin-jsx-a11y": "^4.0.0",
+"eslint-plugin-react": "^6.9.0"
+```
+
+As well as adding a .eslintrc.json file with the following:
+```
+{
+	"env": {
+		"node": true
+	},
+	"extends": "airbnb",
+	"plugins": [
+        "react"
+    ],
+	"rules": {
+		"new-cap": 0,
+		"prefer-template": 0,
+		"global-require": 0
+	},
+	"globals": {
+		"describe": true,
+		"it": true
+	}
+}
+```
+Installation information can also be found [here](https://www.npmjs.com/package/eslint-config-airbnb).
 
 ## Contributing
 To contribute to this project please [create a new pull request](https://help.github.com/articles/creating-a-pull-request/). Additionally,
