@@ -43,6 +43,10 @@ class loc {
   }
 }
 
+const consoleDebug = process.env.DEBUG_CONSOLE;
+const debug = process.env.DEBUG;
+const msgSave = process.env.DEBUG_MSG_LOG;
+
 module.exports = {
     // Create a date for log files
   getDate() {
@@ -78,7 +82,6 @@ module.exports = {
   // send warning that debugging is active
   debugWarn() {
       // if debug is true, send warning msg
-    const debug = process.env.DEBUG;
     if (debug === 'true') {
       cons.log('**************************************** \n Debugging Mode is Active!\n\n****************************************\n');
     }
@@ -86,15 +89,13 @@ module.exports = {
   // debug takes json data, logs to console and to log file
   debug(dataIn) {
     const data = new msgHandle(dataIn);
-    const debug = process.env.DEBUG;
+    const date = this.getDate();
+    const time = this.getTime();
     // if debug is true
     if (debug === 'true') {
         // set up variables
       let logData = '';
       let logReq = '';
-      // get date and time
-      const date = this.getDate();
-      const time = this.getTime();
       // set console colors
       const resetColor = '\x1b[0m';
       const successColor = '\x1b[32m';
@@ -142,7 +143,6 @@ module.exports = {
       // append the file to todays log and console.log the message
       fs.appendFile('./logs/debug_log_' + date + '.log', '\n' + logFile, (err) => {
         if (err) throw err;
-        const consoleDebug = process.env.DEBUG_CONSOLE;
         if (consoleDebug === 'true') {
           cons.log(logMsg);
         }
@@ -159,8 +159,6 @@ module.exports = {
       // if no location data change loc to no info msg
       location.loc = 'No Location Info';
     }
-    const debug = process.env.DEBUG;
-    const consoleDebug = process.env.DEBUG_CONSOLE;
     if (debug === 'true' && consoleDebug === 'true') {
       cons.log('\x1b[37mMSG:\x1b[0m ' + data + '\n-- @ ' + location.loc);
     }
@@ -169,9 +167,6 @@ module.exports = {
   // saves msg method to a seperate log
   saveMsg(data, locIn) {
     const location = new loc(locIn);
-    // get variables
-    const debug = process.env.DEBUG;
-    const msgSave = process.env.DEBUG_MSG_LOG;
     // get date and time
     const date = this.getDate();
     const time = this.getTime();
