@@ -29,7 +29,7 @@ app.use('/go/', require('./routes/go.js')(express, log));
 app.use('/', require('./routes/link.js')(express, log));
 
 // listen on port 3000
-app.listen(3000, () => {
+module.exports = app.listen(3000, () => {
   log.debug({
     type: 'success',
     msg: 'Listening to Server on Port 3000',
