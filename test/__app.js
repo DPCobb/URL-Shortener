@@ -96,6 +96,32 @@ class testApp {
           });
           this.id = res.body.id;
           log.msg('Unit Test Complete for creating new URL', '__app.js');
+          this.updateURL(this.id);
+        })
+        .expect(200, done);
+      });
+    });
+  }
+
+  updateURL(id) {
+    describe('App Routes', () => {
+      const server = require('../src/server.js');
+      it('POST api/v1/urls/id updates a url', (done) => {
+        request(server)
+        .post('/api/v1/urls/' + id)
+        .send({ url: 'www.example.com',
+          key: 'xxx' })
+        .expect('Content-Type', /json/)
+        .expect((res) => {
+          const data = res.body;
+          log.debug({
+            type: 'success',
+            msg: 'TEST: Create New URL',
+            location: '__app.js',
+            data: { data },
+          });
+          this.id = res.body.id;
+          log.msg('Unit Test Complete for updated a URL', '__app.js');
           this.deleteURL(this.id);
         })
         .expect(200, done);

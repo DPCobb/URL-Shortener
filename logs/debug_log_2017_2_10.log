@@ -1,12 +1,12 @@
 
 
 **********
-Event at 19:49:35 @ server.js line 34
+Event at 19:57:20 @ server.js line 34
 SUCCESS
 Listening to Server on Port 3000
 
 **********
-Event at 19:49:35 @ app.js line 19 GET:/urls
+Event at 19:57:20 @ app.js line 19 GET:/urls
 SUCCESS
 Returned all URL's
 Returned Data: 
@@ -61,7 +61,7 @@ Returned Data:
      updatedAt : 2017-02-08T18:40:36.000Z  ] 
 
 **********
-Event at 19:49:35 @ __app.js line 14
+Event at 19:57:20 @ __app.js line 14
 SUCCESS
 TEST: Get all urls
 Returned Data: 
@@ -116,7 +116,7 @@ Returned Data:
      updatedAt : 2017-02-08T18:40:36.000Z  ] 
 
 **********
-Event at 19:49:35 @ shortener.js line 8
+Event at 19:57:20 @ shortener.js line 8
 SUCCESS
 Created a Short URL
 Returned Data: 
@@ -126,36 +126,36 @@ Returned Data:
      key : xxx   
 
 **********
-Event at 19:49:35 @ app.js line 146 POST:/urls
+Event at 19:57:20 @ app.js line 146 POST:/urls
 SUCCESS
 Created short URL
 Returned Data: 
---   data :  id :22
+--   data :  id :23
      url : https://www.example.com 
      tynyUrl : tyny.io/9fa2de7 
      shortUrl : 9fa2de7 
      key : xxx 
-     updatedAt : 2017-02-11T00:49:35.000Z 
-     createdAt : 2017-02-11T00:49:35.000Z   
+     updatedAt : 2017-02-11T00:57:20.000Z 
+     createdAt : 2017-02-11T00:57:20.000Z   
 Requested Data: 
 --   body :  url : https://www.example.com 
      key : xxx   
 
 **********
-Event at 19:49:35 @ __app.js
+Event at 19:57:20 @ __app.js
 SUCCESS
 TEST: Create New URL
 Returned Data: 
---   data :  id :22
+--   data :  id :23
      url : https://www.example.com 
      tynyUrl : tyny.io/9fa2de7 
      shortUrl : 9fa2de7 
      key : xxx 
-     updatedAt : 2017-02-11T00:49:35.000Z 
-     createdAt : 2017-02-11T00:49:35.000Z   
+     updatedAt : 2017-02-11T00:57:20.000Z 
+     createdAt : 2017-02-11T00:57:20.000Z   
 
 **********
-Event at 19:49:35 @ app.js line 48 GET:/urls/:id
+Event at 19:57:20 @ app.js line 48 GET:/urls/:id
 SUCCESS
 Returned URL based on ID
 Returned Data: 
@@ -170,7 +170,7 @@ Requested Data:
 --   id :  id : 1   
 
 **********
-Event at 19:49:35 @ __app.js
+Event at 19:57:20 @ __app.js
 SUCCESS
 TEST: /urls/1
 Returned Data: 
@@ -183,7 +183,7 @@ Returned Data:
      updatedAt : 2017-02-09T22:02:01.000Z   
 
 **********
-Event at 19:49:35 @ app.js line 81 GET:/urls/user/:id
+Event at 19:57:20 @ app.js line 81 GET:/urls/user/:id
 SUCCESS
 Returned URL's based on User Key
 Returned Data: 
@@ -198,7 +198,7 @@ Requested Data:
 --   id :  id : 43a995d29e   
 
 **********
-Event at 19:49:35 @ __app.js
+Event at 19:57:20 @ __app.js
 SUCCESS
 TEST: /urls/user/43a995d29e
 Returned Data: 
@@ -211,58 +211,87 @@ Returned Data:
      updatedAt : 2017-02-09T22:02:01.000Z   
 
 **********
-Event at 19:49:35 @ go.js line 15 GET:/:id
+Event at 19:57:20 @ go.js line 15 GET:/:id
 SUCCESS
 Redirected User to external URL
 Requested Data: 
 --   target : www.google.com  
 
 **********
-Event at 19:49:35 @ __app.js
+Event at 19:57:20 @ __app.js
 SUCCESS
 TEST: /go/1
 Returned Data: 
 --   data :   
 
 **********
-Event at 19:49:35 @ link.js line 15 GET:/:url
+Event at 19:57:20 @ link.js line 15 GET:/:url
 SUCCESS
 Redirected User to external URL
 Requested Data: 
 --   target : www.google.com  
 
 **********
-Event at 19:49:35 @ __app.js
+Event at 19:57:20 @ __app.js
 SUCCESS
 TEST: /7fdcdf0
 Returned Data: 
 --   data :   
 
 **********
-Event at 19:49:35 @ go.js line 65 GET:/:prefix/:url
+Event at 19:57:20 @ go.js line 65 GET:/:prefix/:url
 SUCCESS
 Redirected User to external URL
 Requested Data: 
 --   target : www.google.com  
 
 **********
-Event at 19:49:35 @ __app.js
+Event at 19:57:20 @ __app.js
 SUCCESS
 TEST: /go/tyny.io/7fdcdf0
 Returned Data: 
 --   data :   
 
 **********
-Event at 19:49:35 @ app.js line 113 DELETE:/urls/:id
+Event at 19:57:20 @ app.js line 180 POST:/urls/:id
+SUCCESS
+Updated short URL by ID
+Returned Data: 
+--   data :  url : www.example.com 
+     id :23
+     tynyUrl : tyny.io/9fa2de7 
+     shortUrl : 9fa2de7 
+     key : xxx 
+     createdAt : 2017-02-11T00:57:20.000Z 
+     updatedAt : 2017-02-11T00:57:20.000Z   
+Requested Data: 
+--   body :  url : www.example.com 
+     key : xxx   
+
+**********
+Event at 19:57:20 @ __app.js
+SUCCESS
+TEST: Create New URL
+Returned Data: 
+--   data :  url : www.example.com 
+     id :23
+     tynyUrl : tyny.io/9fa2de7 
+     shortUrl : 9fa2de7 
+     key : xxx 
+     createdAt : 2017-02-11T00:57:20.000Z 
+     updatedAt : 2017-02-11T00:57:20.000Z   
+
+**********
+Event at 19:57:20 @ app.js line 113 DELETE:/urls/:id
 SUCCESS
 Deleted URL based on ID
 Returned Data: 
 --   data :1 
 Requested Data: 
---   id :  id : 22   
+--   id :  id : 23   
 
 **********
-Event at 19:49:35 @ __app.js
+Event at 19:57:20 @ __app.js
 SUCCESS
 TEST: Delete URL
 Returned Data: 
