@@ -1763,3 +1763,326 @@ SUCCESS
 TEST: Delete URL
 Returned Data: 
 --   data :1 
+
+**********
+Event at 15:11:4 @ server.js line 34
+SUCCESS
+Listening to Server on Port 3000
+
+**********
+Event at 15:11:4 @ app.js line 19 GET:/urls
+SUCCESS
+Returned all URL's
+Returned Data: 
+--   data :[  url : www.google.com 
+     id :1
+     tynyUrl : tyny.io/7fdcdf0 
+     shortUrl : 7fdcdf0 
+     key : 43a995d29e 
+     createdAt : 2017-02-05T19:49:59.000Z 
+     updatedAt : 2017-02-09T22:02:01.000Z  
+      url : daniel-cobb.com 
+     id :2
+     tynyUrl : tyny.io/04f580b 
+     shortUrl : 04f580b 
+     key : 2 
+     createdAt : 2017-02-05T19:51:46.000Z 
+     updatedAt : 2017-02-05T19:51:46.000Z  
+      url : https://github.com/DPCobb/URL-Shortener 
+     id :4
+     tynyUrl : tyny.io/8d10273 
+     shortUrl : 8d10273 
+     key : 43a995d29e 
+     createdAt : 2017-02-05T20:16:49.000Z 
+     updatedAt : 2017-02-05T20:16:49.000Z  
+      url : amazon.com 
+     id :5
+     tynyUrl : tyny.io/21a9315 
+     shortUrl : 21a9315 
+     key : 43a995d29e 
+     createdAt : 2017-02-08T17:53:29.000Z 
+     updatedAt : 2017-02-08T17:53:29.000Z  
+      url : amazon.com 
+     id :6
+     tynyUrl : tyny.io/21a9315 
+     shortUrl : 21a9315 
+     key : 43a995d29e 
+     createdAt : 2017-02-08T17:54:00.000Z 
+     updatedAt : 2017-02-08T17:54:00.000Z  
+      url : www.facebook.com 
+     id :8
+     tynyUrl : tyny.io/c5344bc 
+     shortUrl : c5344bc 
+     key : 43a995d29e 
+     createdAt : 2017-02-08T18:37:59.000Z 
+     updatedAt : 2017-02-08T18:37:59.000Z  
+      url : https://coderwall.com/p/yphywg/printing-colorful-text-in-terminal-when-run-node-js-script 
+     id :9
+     tynyUrl : tyny.io/a829a00 
+     shortUrl : a829a00 
+     key : 43a995d29e 
+     createdAt : 2017-02-08T18:40:36.000Z 
+     updatedAt : 2017-02-08T18:40:36.000Z  ] 
+
+**********
+Event at 15:11:4 @ __app.js line 14
+SUCCESS
+TEST: Get all urls
+Returned Data: 
+--   data :[  url : www.google.com 
+     id :1
+     tynyUrl : tyny.io/7fdcdf0 
+     shortUrl : 7fdcdf0 
+     key : 43a995d29e 
+     createdAt : 2017-02-05T19:49:59.000Z 
+     updatedAt : 2017-02-09T22:02:01.000Z  
+      url : daniel-cobb.com 
+     id :2
+     tynyUrl : tyny.io/04f580b 
+     shortUrl : 04f580b 
+     key : 2 
+     createdAt : 2017-02-05T19:51:46.000Z 
+     updatedAt : 2017-02-05T19:51:46.000Z  
+      url : https://github.com/DPCobb/URL-Shortener 
+     id :4
+     tynyUrl : tyny.io/8d10273 
+     shortUrl : 8d10273 
+     key : 43a995d29e 
+     createdAt : 2017-02-05T20:16:49.000Z 
+     updatedAt : 2017-02-05T20:16:49.000Z  
+      url : amazon.com 
+     id :5
+     tynyUrl : tyny.io/21a9315 
+     shortUrl : 21a9315 
+     key : 43a995d29e 
+     createdAt : 2017-02-08T17:53:29.000Z 
+     updatedAt : 2017-02-08T17:53:29.000Z  
+      url : amazon.com 
+     id :6
+     tynyUrl : tyny.io/21a9315 
+     shortUrl : 21a9315 
+     key : 43a995d29e 
+     createdAt : 2017-02-08T17:54:00.000Z 
+     updatedAt : 2017-02-08T17:54:00.000Z  
+      url : www.facebook.com 
+     id :8
+     tynyUrl : tyny.io/c5344bc 
+     shortUrl : c5344bc 
+     key : 43a995d29e 
+     createdAt : 2017-02-08T18:37:59.000Z 
+     updatedAt : 2017-02-08T18:37:59.000Z  
+      url : https://coderwall.com/p/yphywg/printing-colorful-text-in-terminal-when-run-node-js-script 
+     id :9
+     tynyUrl : tyny.io/a829a00 
+     shortUrl : a829a00 
+     key : 43a995d29e 
+     createdAt : 2017-02-08T18:40:36.000Z 
+     updatedAt : 2017-02-08T18:40:36.000Z  ] 
+
+**********
+Event at 15:11:4 @ shortener.js line 8
+SUCCESS
+Created a Short URL
+Returned Data: 
+--   data :  url : https://www.example.com 
+     tynyUrl : tyny.io/9fa2de7 
+     shortUrl : 9fa2de7 
+     key : xxx   
+
+**********
+Event at 15:11:4 @ app.js line 146 POST:/urls
+SUCCESS
+Created short URL
+Returned Data: 
+--   data :  id :15
+     url : https://www.example.com 
+     tynyUrl : tyny.io/9fa2de7 
+     shortUrl : 9fa2de7 
+     key : xxx 
+     updatedAt : 2017-02-12T20:11:04.000Z 
+     createdAt : 2017-02-12T20:11:04.000Z   
+Requested Data: 
+--   body :  url : https://www.example.com 
+     key : xxx   
+
+**********
+Event at 15:11:4 @ __app.js
+SUCCESS
+TEST: Create New URL
+Returned Data: 
+--   data :  id :15
+     url : https://www.example.com 
+     tynyUrl : tyny.io/9fa2de7 
+     shortUrl : 9fa2de7 
+     key : xxx 
+     updatedAt : 2017-02-12T20:11:04.000Z 
+     createdAt : 2017-02-12T20:11:04.000Z   
+
+**********
+Event at 15:11:4 @ app.js line 213 POST:/create
+SUCCESS
+Created new User Key
+Returned Data: 
+--   data :  email : test@example.com 
+     pass : xxx 
+     key : 26d4c9dee4   
+Requested Data: 
+--   body :  email : test@example.com 
+     pass : xxx   
+
+**********
+Event at 15:11:4 @ __app.js
+SUCCESS
+TEST: Create New user
+Returned Data: 
+--   data :  email : test@example.com 
+     pass : xxx 
+     key : 26d4c9dee4   
+
+**********
+Event at 15:11:4 @ __app.js
+SUCCESS
+TEST: Test user deleted.
+
+**********
+Event at 15:11:4 @ app.js line 48 GET:/urls/:id
+SUCCESS
+Returned URL based on ID
+Returned Data: 
+--   data :  url : www.google.com 
+     id :1
+     tynyUrl : tyny.io/7fdcdf0 
+     shortUrl : 7fdcdf0 
+     key : 43a995d29e 
+     createdAt : 2017-02-05T19:49:59.000Z 
+     updatedAt : 2017-02-09T22:02:01.000Z   
+Requested Data: 
+--   id :  id : 1   
+
+**********
+Event at 15:11:4 @ __app.js
+SUCCESS
+TEST: /urls/1
+Returned Data: 
+--   data :  url : www.google.com 
+     id :1
+     tynyUrl : tyny.io/7fdcdf0 
+     shortUrl : 7fdcdf0 
+     key : 43a995d29e 
+     createdAt : 2017-02-05T19:49:59.000Z 
+     updatedAt : 2017-02-09T22:02:01.000Z   
+
+**********
+Event at 15:11:4 @ app.js line 81 GET:/urls/user/:id
+SUCCESS
+Returned URL's based on User Key
+Returned Data: 
+--   data :  url : www.google.com 
+     id :1
+     tynyUrl : tyny.io/7fdcdf0 
+     shortUrl : 7fdcdf0 
+     key : 43a995d29e 
+     createdAt : 2017-02-05T19:49:59.000Z 
+     updatedAt : 2017-02-09T22:02:01.000Z   
+Requested Data: 
+--   id :  id : 43a995d29e   
+
+**********
+Event at 15:11:4 @ __app.js
+SUCCESS
+TEST: /urls/user/43a995d29e
+Returned Data: 
+--   data :  url : www.google.com 
+     id :1
+     tynyUrl : tyny.io/7fdcdf0 
+     shortUrl : 7fdcdf0 
+     key : 43a995d29e 
+     createdAt : 2017-02-05T19:49:59.000Z 
+     updatedAt : 2017-02-09T22:02:01.000Z   
+
+**********
+Event at 15:11:4 @ go.js line 15 GET:/:id
+SUCCESS
+Redirected User to external URL
+Requested Data: 
+--   target : www.google.com  
+
+**********
+Event at 15:11:4 @ __app.js
+SUCCESS
+TEST: /go/1
+Returned Data: 
+--   data :   
+
+**********
+Event at 15:11:5 @ link.js line 15 GET:/:url
+SUCCESS
+Redirected User to external URL
+Requested Data: 
+--   target : www.google.com  
+
+**********
+Event at 15:11:5 @ __app.js
+SUCCESS
+TEST: /7fdcdf0
+Returned Data: 
+--   data :   
+
+**********
+Event at 15:11:5 @ go.js line 65 GET:/:prefix/:url
+SUCCESS
+Redirected User to external URL
+Requested Data: 
+--   target : www.google.com  
+
+**********
+Event at 15:11:5 @ __app.js
+SUCCESS
+TEST: /go/tyny.io/7fdcdf0
+Returned Data: 
+--   data :   
+
+**********
+Event at 15:11:5 @ app.js line 180 POST:/urls/:id
+SUCCESS
+Updated short URL by ID
+Returned Data: 
+--   data :  url : www.example.com 
+     id :15
+     tynyUrl : tyny.io/9fa2de7 
+     shortUrl : 9fa2de7 
+     key : xxx 
+     createdAt : 2017-02-12T20:11:04.000Z 
+     updatedAt : 2017-02-12T20:11:05.000Z   
+Requested Data: 
+--   body :  url : www.example.com 
+     key : xxx   
+
+**********
+Event at 15:11:5 @ __app.js
+SUCCESS
+TEST: Create New URL
+Returned Data: 
+--   data :  url : www.example.com 
+     id :15
+     tynyUrl : tyny.io/9fa2de7 
+     shortUrl : 9fa2de7 
+     key : xxx 
+     createdAt : 2017-02-12T20:11:04.000Z 
+     updatedAt : 2017-02-12T20:11:05.000Z   
+
+**********
+Event at 15:11:5 @ app.js line 113 DELETE:/urls/:id
+SUCCESS
+Deleted URL based on ID
+Returned Data: 
+--   data :1 
+Requested Data: 
+--   id :  id : 15   
+
+**********
+Event at 15:11:5 @ __app.js
+SUCCESS
+TEST: Delete URL
+Returned Data: 
+--   data :1 
