@@ -229,7 +229,7 @@ module.exports = (express, log) => {
     // set data
     const data = {
       email: user,
-      passw: pass,
+      pass: pass,
       key: shortKeyHash,
     };
       // add to db

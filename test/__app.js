@@ -8,6 +8,7 @@
 const expect = require('chai').expect;
 const request = require('supertest');
 const log = require('../src/modules/debug.js');
+const db = require('../src/models/db.js');
 
 class testApp {
   constructor() {
@@ -175,9 +176,58 @@ class testApp {
       });
     });
   }
+
+  createUser() {
+    describe('App Routes', () => {
+      const server = require('../src/server.js');
+      it('POST api/v1/create creates new user', (done) => {
+        request(server)
+        .post('/api/v1/create')
+        .send({ email: 'test@example.com',
+          pass: 'xxx' })
+        .expect('Content-Type', /json/)
+        .expect((res) => {
+          const data = res.body;
+          log.debug({
+            type: 'success',
+            msg: 'TEST: Create New user',
+            location: '__app.js',
+            data: { data },
+          });
+          this.id = res.body.id;
+          log.msg('Unit Test Complete for creating new user', '__app.js');
+          this.deleteUser();
+        })
+        .expect(200, done);
+      });
+    });
+  }
+
+  deleteUser() {
+    db.user.destroy({
+      where: {
+        email: 'test@example.com',
+      },
+      include: [{
+        all: true,
+        nested: true,
+      }],
+    });
+    log.debug({
+      type: 'success',
+      msg: 'TEST: Test user deleted.',
+      location: '__app.js',
+    });
+  }
+
+  launchTest() {
+    this.getAllUrls();
+    this.createURL();
+    this.createUser();
+  }
+
 }
 
 // run the tests
 const run = new testApp();
-run.getAllUrls();
-run.createURL();
+run.launchTest();
