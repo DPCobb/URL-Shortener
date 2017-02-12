@@ -18,11 +18,23 @@ To install this app download or clone the repository and install the required
 packages for the project.
 
 ```
-$ npm install express --save
-$ npm install body-parser --save
-$ npm install sequelizer --save
-$ npm install mysql --save
-$ npm install dotenv --save-dev
+body-parser: ^1.16.0,
+chai: ^3.5.0,
+express: ^4.14.1,
+mysql: ^2.13.0,
+sequelize: ^3.30.1,
+dotenv: ^4.0.0,
+supertest: ^3.0.0
+```
+As well as the following Dev dependencies:
+```
+eslint: ^3.15.0,
+eslint-config-airbnb: ^14.1.0,
+eslint-plugin-import: ^2.2.0,
+eslint-plugin-jsx-a11y: ^4.0.0,
+eslint-plugin-react: ^6.9.0,
+istanbul: ^0.4.5,
+mocha: ^3.2.0
 ```
 Or install required packages at once using
 
@@ -157,6 +169,15 @@ Similar outputs will be created in the log file with the addition of the time of
 ```
 This method is an easy way to troubleshoot features and methods or to test if data is being passed. It could also
 be used as strictly a log.
+
+### Unit Tests
+
+To run a Unit Test ensure you have Mocha, Chai, and Istanbul installed and then in the Command Line run the following command to run tests and create a coverage report:
+
+```
+istanbul cover _mocha
+```
+
 ## Create User
 Although, this step is entirely optional it will allow users to search based on a user key.
 To create a user send a POST request to /api/v1/create with the following data:
