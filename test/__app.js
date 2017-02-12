@@ -11,9 +11,7 @@ const log = require('../src/modules/debug.js');
 const db = require('../src/models/db.js');
 
 class testApp {
-  constructor() {
 
-  }
   setData(data) {
     this.app = {
       url: data.url,
@@ -218,6 +216,7 @@ class testApp {
       msg: 'TEST: Test user deleted.',
       location: '__app.js',
     });
+    this.response = 1;
   }
 
   launchTest() {

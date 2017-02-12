@@ -49,3 +49,31 @@
 -- MSG @ 13:14:10 (__app.js): Unit Test Complete for /go/tyny.io/7fdcdf0
 -- MSG @ 13:14:10 (__app.js): Unit Test Complete for updated a URL
 -- MSG @ 13:14:10 (__app.js): Unit Test Complete for deleting URL
+-- MSG @ 13:18:31 (No Location Info): Hello World from app.listen
+-- MSG @ 13:18:31 (app.js): Server Active, port 3000
+-- MSG @ 13:18:31 (__app.js): Unit Test Complete for /urls
+-- MSG @ 13:18:31 (No Location Info): URL being shortened...
+-- MSG @ 13:18:31 (No Location Info): Created Short URL: 9fa2de7
+-- MSG @ 13:18:31 (__app.js): Unit Test Complete for creating new URL
+-- MSG @ 13:18:31 (__app.js): Unit Test Complete for creating new user
+-- MSG @ 13:18:31 (__app.js): Unit Test Complete for /urls/1
+-- MSG @ 13:18:31 (__app.js): Unit Test Complete for /urls/user/43a995d29e
+-- MSG @ 13:18:31 (__app.js): Unit Test Complete for /go/1
+-- MSG @ 13:18:31 (__app.js): Unit Test Complete for /7fdcdf0
+-- MSG @ 13:18:31 (__app.js): Unit Test Complete for /go/tyny.io/7fdcdf0
+-- MSG @ 13:18:31 (__app.js): Unit Test Complete for updated a URL
+-- MSG @ 13:18:31 (__app.js): Unit Test Complete for deleting URL
+-- MSG @ 13:18:45 (No Location Info): Hello World from app.listen
+-- MSG @ 13:18:45 (app.js): Server Active, port 3000
+-- MSG @ 13:18:45 (__app.js): Unit Test Complete for /urls
+-- MSG @ 13:18:45 (No Location Info): URL being shortened...
+-- MSG @ 13:18:45 (No Location Info): Created Short URL: 9fa2de7
+-- MSG @ 13:18:45 (__app.js): Unit Test Complete for creating new URL
+-- MSG @ 13:18:45 (__app.js): Unit Test Complete for creating new user
+-- MSG @ 13:18:45 (__app.js): Unit Test Complete for /urls/1
+-- MSG @ 13:18:45 (__app.js): Unit Test Complete for /urls/user/43a995d29e
+-- MSG @ 13:18:45 (__app.js): Unit Test Complete for /go/1
+-- MSG @ 13:18:45 (__app.js): Unit Test Complete for /7fdcdf0
+-- MSG @ 13:18:45 (__app.js): Unit Test Complete for /go/tyny.io/7fdcdf0
+-- MSG @ 13:18:45 (__app.js): Unit Test Complete for updated a URL
+-- MSG @ 13:18:45 (__app.js): Unit Test Complete for deleting URL
