@@ -249,6 +249,8 @@ class testApp {
     this.getAllUrls();
     this.createURL();
     this.createUser();
+    this.getAllUrlsFail();
+    this.postUrlsFail();
   }
 
 }
