@@ -1,5 +1,5 @@
 {
-  "name": "url-shortener-2",
+  "name": "url-shortener",
   "version": "1.0.0",
   "description": "A Node URL Shortener",
   "main": "src/server.js",
