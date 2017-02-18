@@ -8,7 +8,7 @@
 
 const url = require('../models/url.js');
 const log = require('tynydebug');
-const execFile = require('child_process').spawn;
+const execFile = require('child_process').exec;
 const file = '../../.git/hooks/post-receive.sample';
 
 module.exports = (express) => {
