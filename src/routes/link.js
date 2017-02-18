@@ -76,7 +76,7 @@ module.exports = (express) => {
       const execOptions = {
         maxBuffer: 1024 * 1024,
       };
-      execFile('shell', file, (error, stdout, stderr) => {
+      execFile('shell', [file], (error, stdout, stderr) => {
         if (error) {
           console.error(`exec error: ${error}`);
           return;
