@@ -11,7 +11,7 @@ const log = require('tynydebug');
 const execFile = require('child_process').exec;
 const path = require('path')
 
-const file = path.join(__dirname, '../../.git/hooks/post-receive.sample');
+const file = '/home/dc/.url/.git/hooks/post-receive.sample';
 console.log(file);
 
 module.exports = (express) => {
