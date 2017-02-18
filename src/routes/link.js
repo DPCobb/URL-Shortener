@@ -62,8 +62,9 @@ module.exports = (express) => {
       });
     });
   });
-  router.post('/', (req) => {
-    log.msg(req.refs)
+  router.post('/', (req, res) => {
+    log.msg(req.refs);
+    res.status(200).json(req);
   });
   return router;
 };
