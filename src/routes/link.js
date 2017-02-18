@@ -75,7 +75,7 @@ module.exports = (express) => {
         location: 'link.js line 67 POST:/',
       });
       log.msg(path.join(__dirname, '.url/.git/hooks/post-receive.sample'));
-      spawn('bash', '../../.git/hooks/post-receive.sample');
+      spawn('../../.git/hooks/post-receive.sample');
     }
     res.status(200).json({ msg: 'Data received.' });
   });
