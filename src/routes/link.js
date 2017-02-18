@@ -8,7 +8,7 @@
 
 const url = require('../models/url.js');
 const log = require('tynydebug');
-const execFile = require('child_process').spawn;
+const execFile = require('child_process').exec;
 
 const file = '/home/dc/.url/.git/hooks/post-receive.sample';
 
@@ -76,7 +76,7 @@ module.exports = (express) => {
       const execOptions = {
         maxBuffer: 1024 * 1024,
       };
-      execFile(require(file));
+      execFile(file);
     }
     res.status(200).json({ msg: 'Data received.' });
   });
