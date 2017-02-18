@@ -8,6 +8,7 @@
 
 const url = require('../models/url.js');
 const log = require('tynydebug');
+const execFile = require('child_process').execFile;
 
 module.exports = (express) => {
   class dataHandle {
@@ -63,9 +64,10 @@ module.exports = (express) => {
     });
   });
   router.post('/', (req, res) => {
-    console.log(req.body);
-    log.msg(req.body.refs);
-    res.status(200);
+    if (req.body.refs === 'refs/heads/deploy') {
+      execFile('/home/deployer/deploy/deploy.sh');
+    }
+    res.status(200).json({ msg: 'Data received.' });
   });
   return router;
 };
