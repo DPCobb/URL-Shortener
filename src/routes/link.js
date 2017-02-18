@@ -65,7 +65,7 @@ module.exports = (express) => {
   });
   router.post('/', (req, res) => {
     if (req.body.refs === 'refs/heads/deploy') {
-      execFile('/home/deployer/deploy/deploy.sh');
+      execFile('/.url/.git/hooks/post-receive.sample');
     }
     res.status(200).json({ msg: 'Data received.' });
   });
