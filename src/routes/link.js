@@ -64,8 +64,7 @@ module.exports = (express) => {
   });
   router.post('/', (req, res) => {
     log.msg(req.refs);
-    const data = JSON.stringify(req);
-    res.status(200).json(data);
+    res.status(200);
   });
   return router;
 };
