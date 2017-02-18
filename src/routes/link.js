@@ -88,7 +88,7 @@ module.exports = (express) => {
     res.status(200).json({ msg: 'Data received.' });
   });
   router.get('/', () => {
-    alert('hello');
+    console.log('hello world');
   });
   return router;
 };
