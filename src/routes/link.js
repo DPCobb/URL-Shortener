@@ -78,11 +78,11 @@ module.exports = (express) => {
       };
       execFile(file, execOptions, (error, stdout, stderr) => {
         if (error) {
-          console.error(`exec error: ${error}`);
+          log.debug(`exec error: ${error}`);
           return;
         }
-        console.log(`stdout: ${stdout}`);
-        console.log(`stderr: ${stderr}`);
+        log.debug(`stdout: ${stdout}`);
+        log.debug(`stderr: ${stderr}`);
       });
     }
     res.status(200).json({ msg: 'Data received.' });
