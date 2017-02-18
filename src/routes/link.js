@@ -8,9 +8,11 @@
 
 const url = require('../models/url.js');
 const log = require('tynydebug');
-const execFile = require('child_process').exec;
+const execFile = require('child_process').execFile;
 const path = require('path')
+
 const file = path.join(__dirname, '../../.git/hooks/post-receive.sample');
+console.log(file);
 
 module.exports = (express) => {
   class dataHandle {
