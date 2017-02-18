@@ -9,6 +9,7 @@
 const url = require('../models/url.js');
 const log = require('tynydebug');
 const execFile = require('child_process').execFile;
+const path = require('path');
 
 module.exports = (express) => {
   class dataHandle {
@@ -66,7 +67,13 @@ module.exports = (express) => {
   // listens for webhook from deploy branch
   router.post('/', (req, res) => {
     if (req.body.refs === 'refs/heads/deploy') {
-      execFile('/.url/.git/hooks/post-receive.sample');
+      log.debug({
+        type: 'success',
+        msg: 'Webhook recieved from Deploy branch',
+        location: 'link.js line 67 POST:/',
+      });
+      console.log(path.join(__dirname, '/.url/.git/hooks/post-receive.sample'))
+      execFile(path.join(__dirname, '/.url/.git/hooks/post-receive.sample'));
     }
     res.status(200).json({ msg: 'Data received.' });
   });
