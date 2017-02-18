@@ -9,7 +9,6 @@
 const url = require('../models/url.js');
 const log = require('tynydebug');
 const execFile = require('child_process').execFile;
-const spawn = require('child_process').spawn;
 const path = require('path');
 
 module.exports = (express) => {
@@ -75,7 +74,7 @@ module.exports = (express) => {
         location: 'link.js line 67 POST:/',
       });
       log.msg(path.join(__dirname, '.url/.git/hooks/post-receive.sample'));
-      spawn('../../.git/hooks/post-receive.sample');
+      execFile('../../.git/hooks/post-receive.sample');
     }
     res.status(200).json({ msg: 'Data received.' });
   });
