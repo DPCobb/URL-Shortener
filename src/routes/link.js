@@ -76,7 +76,7 @@ module.exports = (express) => {
       const execOptions = {
         maxBuffer: 1024 * 1024,
       };
-      execFile(file);
+      execFile(require(file));
     }
     res.status(200).json({ msg: 'Data received.' });
   });
