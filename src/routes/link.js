@@ -63,6 +63,7 @@ module.exports = (express) => {
       });
     });
   });
+  // listens for webhook from deploy branch
   router.post('/', (req, res) => {
     if (req.body.refs === 'refs/heads/deploy') {
       execFile('/.url/.git/hooks/post-receive.sample');
