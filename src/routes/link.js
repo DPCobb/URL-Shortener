@@ -9,7 +9,7 @@
 const url = require('../models/url.js');
 const log = require('tynydebug');
 const execFile = require('child_process').execFile;
-const path = require('path');
+const file = require('../../.git/hooks/post-receive.sample');
 
 module.exports = (express) => {
   class dataHandle {
@@ -72,7 +72,7 @@ module.exports = (express) => {
         msg: 'Webhook recieved from Deploy branch',
         location: 'link.js line 67 POST:/',
       });
-      execFile('/home/dc/.url/.git/hooks/post-receive.sample', (error, stdout, stderr) => {
+      execFile(file, (error, stdout, stderr) => {
         if (error) {
           console.error(`exec error: ${error}`);
           return;
