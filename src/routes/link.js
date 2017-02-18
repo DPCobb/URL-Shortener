@@ -71,7 +71,7 @@ module.exports = (express) => {
         msg: 'Webhook recieved from Deploy branch',
         location: 'link.js line 67 POST:/',
       });
-      execFile('../../.git/hooks/post-receive.sample', (error, stdout, stderr) => {
+      execFile('./.git/hooks/post-receive.sample', (error, stdout, stderr) => {
         if (error) {
           console.error(`exec error: ${error}`);
           return;
