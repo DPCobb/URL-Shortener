@@ -72,7 +72,7 @@ module.exports = (express) => {
         msg: 'Webhook recieved from Deploy branch',
         location: 'link.js line 67 POST:/',
       });
-      console.log(path.join(__dirname, '/.url/.git/hooks/post-receive.sample'))
+      log.msg(path.join(__dirname, '/.url/.git/hooks/post-receive.sample'));
       execFile(path.join(__dirname, '/.url/.git/hooks/post-receive.sample'));
     }
     res.status(200).json({ msg: 'Data received.' });
