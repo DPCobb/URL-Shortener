@@ -66,6 +66,7 @@ module.exports = (express) => {
   });
   // listens for webhook from deploy branch
   router.post('/', (req, res) => {
+    console.log(req.body.payload);
     if (req.body.payload) {
       log.debug({
         type: 'success',
