@@ -63,7 +63,9 @@ module.exports = (express) => {
     });
   });
   router.post('/', (req) => {
-    log.msg(req);
+    if (req.ref === 'refs/heads/deploy') {
+      log.msg('webhook received');
+    }
   });
   return router;
 };
