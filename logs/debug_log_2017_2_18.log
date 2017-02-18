@@ -1,16 +1,27 @@
 
 
 **********
+<<<<<<< HEAD
+Event at 12:31:38 PM @ server.js line 34
+=======
 Event at 12:34:26 PM @ server.js line 34
+>>>>>>> origin/deploy
 SUCCESS
 Listening to Server on Port 3000
 
 **********
+<<<<<<< HEAD
+Event at 12:31:39 PM @ server.js line 34
+=======
 Event at 1:33:18 PM @ server.js line 34
+>>>>>>> origin/deploy
 SUCCESS
 Listening to Server on Port 3000
 
 **********
+<<<<<<< HEAD
+Event at 1:57:22 PM @ server.js line 34
+=======
 Event at 1:35:45 PM @ server.js line 34
 SUCCESS
 Listening to Server on Port 3000
@@ -32,5 +43,11 @@ Listening to Server on Port 3000
 
 **********
 Event at 1:36:05 PM @ server.js line 34
+>>>>>>> origin/deploy
+SUCCESS
+Listening to Server on Port 3000
+
+**********
+Event at 1:57:52 PM @ server.js line 34
 SUCCESS
 Listening to Server on Port 3000

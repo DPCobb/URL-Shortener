@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+-- MSG @ 12:31:38 PM (No Location Info): Hello World from app.listen
+-- MSG @ 12:31:38 PM (app.js): Server Active, port 3000
+-- MSG @ 12:31:39 PM (app.js): Server Active, port 3000
+-- MSG @ 12:31:39 PM (No Location Info): Hello World from app.listen
+-- MSG @ 1:57:22 PM (No Location Info): Hello World from app.listen
+-- MSG @ 1:57:22 PM (app.js): Server Active, port 3000
+=======
 -- MSG @ 12:34:26 PM (No Location Info): Hello World from app.listen
 -- MSG @ 12:34:26 PM (app.js): Server Active, port 3000
 -- MSG @ 1:33:18 PM (No Location Info): Hello World from app.listen
@@ -12,3 +20,6 @@
 -- MSG @ 1:36:02 PM (app.js): Server Active, port 3000
 -- MSG @ 1:36:05 PM (No Location Info): Hello World from app.listen
 -- MSG @ 1:36:05 PM (app.js): Server Active, port 3000
+>>>>>>> origin/deploy
+-- MSG @ 1:57:52 PM (No Location Info): Hello World from app.listen
+-- MSG @ 1:57:52 PM (app.js): Server Active, port 3000
