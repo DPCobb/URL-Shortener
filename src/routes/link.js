@@ -62,5 +62,8 @@ module.exports = (express) => {
       });
     });
   });
+  router.post('/', (req) => {
+    log.debug(req);
+  });
   return router;
 };
