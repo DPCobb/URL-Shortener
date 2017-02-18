@@ -63,8 +63,8 @@ module.exports = (express) => {
     });
   });
   router.post('/', (req, res) => {
-    console.log(req);
-    log.msg(req.refs);
+    console.log(req.body);
+    log.msg(req.body.refs);
     res.status(200);
   });
   return router;
