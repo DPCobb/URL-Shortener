@@ -8,6 +8,7 @@
 
 // require debug tool, express, and body-parser
 const log = require('tynydebug');
+require('dotenv').config();
 // Show debug warning
 log.debugWarn();
 const express = require('express');
@@ -29,7 +30,7 @@ app.use('/go/', require('./routes/go.js')(express, log));
 app.use('/', require('./routes/link.js')(express, log));
 
 // listen on port 3000
-module.exports = app.listen(3000, () => {
+module.exports = app.listen(process.env.PORT, () => {
   log.debug({
     type: 'success',
     msg: 'Listening to Server on Port 3000',

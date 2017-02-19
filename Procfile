@@ -1,1 +1,2 @@
-node src/server.js
+web: npm install
+web: node src/server.js
