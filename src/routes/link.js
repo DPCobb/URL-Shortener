@@ -86,7 +86,6 @@ module.exports = (express) => {
       });
     }
     res.status(200).json({ msg: 'Data received.' });
-    return 'hello';
   });
   return router;
 };
