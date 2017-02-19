@@ -285,7 +285,8 @@ The API will then send the following response:
   "updatedAt": "2017-02-05T20:11:27.000Z"
 }
 ```
-
+### /
+This is a special post request route that listens for a POST from a Github Webhook.
 ## GET Requests
 
 ### /api/v1/urls
