@@ -9,6 +9,7 @@ A node.js url shortener API.
 - [Get Requests](#get-requests)
 - [Delete Requests](#delete-requests)
 - [Go To Links](#accessing-links)
+- [Deployment](#deployment)
 - [Style Guide](#style-guide)
 - [Contributing](#contributing)
 
@@ -55,7 +56,9 @@ DB_PORT = MYSQL PORT
 DEBUG = true
 DEBUG_CONSOLE = true
 DEBUG_MSG_LOG = true
+PORT = YOUR PORT
 ```
+It is important to set the port to the port you wish for the app to listen on. In some cases this may differ from servicet to service. For instance, Heroku requires the port to be 5000 for the app to function correctly.
 ## Using the App
 There are two ways to run the app, with debug mode on or off. Running with all settings on true will create a daily log for both methods included and send messages to the console. Your .env file should contain the following
 entries:
@@ -378,6 +381,19 @@ localhost:3000/go/tyny.io/7fdcdf0
 ```
 localhost:3000/7fdcdf0
 ```
+
+## Deployment
+To deploy the app on a VPS with automatic deployments first set up a server running Ubuntu. Next add a branch to your repo titled "deploy". The deploy branch should only be used for production apps and copied from the master branch. Configure a webhook (on Github: Settings -> webhooks) to reach out to your server on a push event to the deploy branch.
+Next, add the following to your project under .git/hooks saved as post-receive.sample:
+```
+#!/bin/bash
+git pull --rebase URL-Shortener deploy
+npm install
+pm2 restart server
+```
+This will run when a post request is made from your webhook to your project. A route is set in src/routes/link.js that listens for this event and then executes this file.
+
+To automatically deploy new versions of your app you make the changes needed on your current working branch, merge those changes into the main branch, and then merge main into the deploy branch. This will launch your new code on your VPS.
 ## Style Guide
 This project currently uses the Airbnb JS Style Guide found [here](https://github.com/airbnb/javascript).
 The easiest way to ensure contributions adhere to the same style guide is to use an IDE that supports an
