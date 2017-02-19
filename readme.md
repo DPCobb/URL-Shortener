@@ -9,6 +9,7 @@ A node.js url shortener API.
 - [Get Requests](#get-requests)
 - [Delete Requests](#delete-requests)
 - [Go To Links](#accessing-links)
+- [Workflow](#workflow)
 - [Deployment](#deployment)
 - [Style Guide](#style-guide)
 - [Contributing](#contributing)
@@ -382,8 +383,14 @@ localhost:3000/go/tyny.io/7fdcdf0
 ```
 localhost:3000/7fdcdf0
 ```
-
+## Workflow
+The workflow for this project is a feature branch workflow. If you are creating a new feature you should create a new branch to work on that feature. Once that feature is complete and passes testing the branch can be merged into the master branch. Once merged into the master branch create a new release of the project before moving it to either release or deploy. If the app is going to be released into a VPS that is configured to automatically update through webhooks merge master into deploy. For deployment on Heroku merge master into release. From here Codeship will run tests and if they pass Heroku will automatically deploy the app to staging.
 ## Deployment
+To complete deployment on Heroku you will need to promote the staging app to the production app through either the CLI or the Heroku app page. If you are deploying to Heroku you will need to add a file titled "Procfile" with the following line:
+```
+web: node src/server.js
+```
+
 To deploy the app on a VPS with automatic deployments first set up a server running Ubuntu. Next add a branch to your repo titled "deploy". The deploy branch should only be used for production apps and copied from the master branch. Configure a webhook (on Github: Settings -> webhooks) to reach out to your server on a push event to the deploy branch.
 Next, add the following to your project under .git/hooks saved as post-receive.sample:
 ```
