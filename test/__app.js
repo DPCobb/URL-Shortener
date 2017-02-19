@@ -7,7 +7,7 @@
  */
 const expect = require('chai').expect;
 const request = require('supertest');
-const log = require('../src/modules/debug.js');
+const log = require('tynydebug');
 const db = require('../src/models/db.js');
 
 class testApp {
