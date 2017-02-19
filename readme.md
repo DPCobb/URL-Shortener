@@ -394,7 +394,7 @@ pm2 restart server
 ```
 This will run when a post request is made from your webhook to your project. A route is set in src/routes/link.js that listens for this event and then executes this file.
 
-To automatically deploy new versions of your app you make the changes needed on your current working branch, merge those changes into the main branch, and then merge main into the deploy branch. This will launch your new code on your VPS.
+To automatically deploy new versions of your app you make the changes needed on your current working branch, merge those changes into the master branch, and then merge master into the deploy branch. This will launch your new code on your VPS.
 ## Style Guide
 This project currently uses the Airbnb JS Style Guide found [here](https://github.com/airbnb/javascript).
 The easiest way to ensure contributions adhere to the same style guide is to use an IDE that supports an
