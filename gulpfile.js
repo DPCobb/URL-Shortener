@@ -57,9 +57,11 @@ gulp.task('cmt', () => {
   })
   .pipe(git.add())
   // m is commit message
+  // gulp cmt --m='message'
   .pipe(git.commit(argv.m));
 });
 // push changes
+// gulp up --b='branch'
 gulp.task('up', () => {
   // b is branch to push to
   git.push('origin', argv.b, { args: ' -u' }, (err) => {
