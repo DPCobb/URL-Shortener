@@ -23,7 +23,7 @@ gulp.task('ver-bump', (cb) => {
     // write the file
     fs.writeFileSync('package.json', JSON.stringify(newVersion, null, 2));
   });
-  cb();
+  cb(console.log('cb'));
 });
 
 // add the files and create  commit
@@ -32,7 +32,7 @@ gulp.task('add-commit', ['ver-bump'], (cb) => {
     if (err) throw err;
   })
   .pipe(git.add())
-  .pipe(git.commit('Testing entire git sequence, ver should be 1.1.1'));
+  .pipe(git.commit('Testing entire git sequence, ver should be 1.1.0'));
   cb();
 });
 
