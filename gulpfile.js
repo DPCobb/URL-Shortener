@@ -32,7 +32,7 @@ gulp.task('add-commit', ['ver-bump'], (cb) => {
     if (err) throw err;
   })
   .pipe(git.add())
-  .pipe(git.commit('gulp bump'));
+  .pipe(git.commit('async is not working right'));
   cb();
 });
 
@@ -46,5 +46,5 @@ gulp.task('push', ['ver-bump', 'add-commit'], (cb) => {
 
 // start tasks
 gulp.task('bump', ['ver-bump', 'add-commit', 'push'], () => {
-  
+
 });
