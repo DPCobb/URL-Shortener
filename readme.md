@@ -467,4 +467,4 @@ This will run the unit tests with the following command:
 istanbul cover _mocha
 ```
 ### gulp bump --ver=#.#.# --rel='Release type'
-This change your version number in package.json, ver is your current version and rel should be one of the following: major, minor, or patch. This will also git add all files, create a commit with the message 'Version Bumped, sending to Release Branch', and push to the release branch.
+This will change your version number in package.json, ver is your current version and rel should be one of the following: major, minor, or patch. This will also git add all files, create a commit with the message 'Version Bumped, sending to Release Branch', and push to the release branch.
