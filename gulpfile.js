@@ -37,11 +37,11 @@ gulp.task('add-commit', ['ver-bump'], (cb) => {
 });
 
 // push to repo
-gulp.task('push', ['add-commit'], (cb) => {
+gulp.task('push', ['ver-bump', 'add-commit'], (cb) => {
   git.push('origin', 'ver-bump', { args: ' -u' }, (err) => {
     if (err) throw err;
   });
-  cb(console.log('push complete'))
+  cb(console.log('push complete'));
 });
 
 // start tasks
