@@ -25,11 +25,12 @@ gulp.task('verBump', () => {
 });
 
 // add the files and create  commit
-gulp.task('add-commit', (err) => {
-  gulp.src('.')
+gulp.task('add-commit', () => {
+  gulp.src('.', (err) => {
+    if (err) throw err;
+  })
   .pipe(git.add())
   .pipe(git.commit('testing push'));
-  if (err) throw err;
 });
 
 // push to repo
