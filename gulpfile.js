@@ -9,6 +9,7 @@ const git = require('gulp-git');
 const debug = require('tynydebug');
 const argv = require('yargs').argv;
 const fs = require('fs');
+const shell = require('gulp-shell');
 
 // bump the version
 gulp.task('ver-bump', (cb, err) => {
@@ -49,10 +50,23 @@ gulp.task('push', ['ver-bump', 'add-commit'], (cb) => {
 gulp.task('bump', ['ver-bump', 'add-commit', 'push']);
 
 // extra tasks
+// add and commit
 gulp.task('cmt', () => {
   gulp.src('.', (err) => {
     if (err) throw err;
   })
   .pipe(git.add())
+  // m is commit message
   .pipe(git.commit(argv.m));
 });
+// push changes
+gulp.task('up', () => {
+  // b is branch to push to
+  git.push('origin', argv.b, { args: ' -u' }, (err) => {
+    if (err) throw err;
+  });
+});
+// run coverage test
+gulp.task('test', shell.task([
+  'istanbul cover _mocha',
+]));
