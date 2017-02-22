@@ -28,7 +28,7 @@ gulp.task('add-commit', (cb) => {
   gulp.src('.')
   .pipe(git.add())
   .pipe(git.commit('testing push'));
-  cb(err);
+  cb();
 });
 
 gulp.task('push', ['add-commit'], () => {
