@@ -25,6 +25,7 @@
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.9.0",
     "gulp": "^3.9.1",
+    "gulp-git": "^2.0.0",
     "istanbul": "^0.4.5",
     "mocha": "^3.2.0",
     "nock": "^9.0.5",
