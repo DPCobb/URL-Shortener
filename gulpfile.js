@@ -6,6 +6,6 @@
 
 const gulp = require('gulp');
 
-gulp.task('ver-bump', () => {
-
+gulp.task('verBump', () => {
+  console.log('hello world from gulp');
 });
