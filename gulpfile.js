@@ -11,11 +11,13 @@ const fs = require('fs');
 
 gulp.task('verBump', () => {
   const getVersion = debug.updateVersion(argv.ver, argv.rel);
-  console.log(getVersion);
-  // get package.json
+  // get and parse package.json
   const pack = JSON.parse(fs.readFileSync('package.json'));
-  console.log(pack);
-  // update the version number
-  // save package.json
+  // set a newVersion equal to the old package.json
+  const newVersion = pack;
+  // change the version number
+  newVersion.version = getVersion;
+  // write the file
+  fs.writeFileSync('package.json', JSON.stringify(newVersion, null, 2));
   // git add, git commit, git push to release
 });
