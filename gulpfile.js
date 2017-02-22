@@ -11,7 +11,7 @@ const argv = require('yargs').argv;
 const fs = require('fs');
 
 // bump the version
-gulp.task('verBump', () => {
+gulp.task('ver-bump', (cb) => {
   const getVersion = debug.updateVersion(argv.ver, argv.rel);
   // get and parse package.json
   fs.readFile('package.json', (err, data) => {
@@ -23,10 +23,11 @@ gulp.task('verBump', () => {
     // write the file
     fs.writeFileSync('package.json', JSON.stringify(newVersion, null, 2));
   });
+  cb();
 });
 
 // add the files and create  commit
-gulp.task('add-commit', () => {
+gulp.task('add-commit', ['ver-bump'], () => {
   gulp.src('.', (err) => {
     if (err) throw err;
   })
@@ -42,4 +43,4 @@ gulp.task('push', ['add-commit'], () => {
 });
 
 // start tasks
-gulp.task('bump', ['add-commit', 'push']);
+gulp.task('bump', ['ver-bump', 'add-commit', 'push']);
