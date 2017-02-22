@@ -31,11 +31,10 @@ gulp.task('add', () => {
   .on('data', (data) => {
     console.log(data);
   });
-  git.push('origin', ['ver-bump'], { args: " -u" }, (err) => {
-    if (err) throw err;
-  });
 });
 
-gulp.task('commit', () => {
-
+gulp.task('push', () => {
+  git.push('origin', 'ver-bump', { args: " -u" }, (err) => {
+    if (err) throw err;
+  });
 });
