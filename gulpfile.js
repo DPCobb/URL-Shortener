@@ -31,7 +31,7 @@ gulp.task('add', () => {
   .on('data', (data) => {
     console.log(data);
   });
-  git.push('origin', 'ver-bump', { args: " -u" }, (err) => {
+  git.push('origin', ['ver-bump'], { args: " -u" }, (err) => {
     if (err) throw err;
   });
 });
