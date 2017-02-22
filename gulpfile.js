@@ -24,10 +24,11 @@ gulp.task('verBump', () => {
   });
 });
 
-gulp.task('add-commit', () => {
+gulp.task('add-commit', (cb) => {
   gulp.src('.')
   .pipe(git.add())
   .pipe(git.commit('testing push'));
+  cb(err);
 });
 
 gulp.task('push', ['add-commit'], () => {
