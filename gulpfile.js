@@ -36,4 +36,6 @@ gulp.task('push', () => {
   });
 });
 
-gulp.task('bump', ['add-commit', 'push']);
+gulp.task('bump', ['add-commit'], () => {
+  gulp.task('push');
+});
