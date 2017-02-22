@@ -36,7 +36,3 @@ gulp.task('push', ['add-commit'], () => {
     if (err) throw err;
   });
 });
-
-gulp.task('bump', ['add-commit', 'push'], () => {
-
-});
