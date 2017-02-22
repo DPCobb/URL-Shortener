@@ -23,3 +23,16 @@ gulp.task('verBump', () => {
     fs.writeFileSync('package.json', JSON.stringify(newVersion, null, 2));
   });
 });
+
+gulp.task('add', () => {
+  gulp.src('*')
+  .pipe(git.add())
+  .pipe(git.commit('Test Gulp Commit', { emitData: true }))
+  .on('data', (data) => {
+    console.log(data);
+  });
+});
+
+gulp.task('commit', () => {
+
+});
