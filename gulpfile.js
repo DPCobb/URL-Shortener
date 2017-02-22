@@ -5,7 +5,10 @@
  */
 
 const gulp = require('gulp');
+const debug = require('tynydebug');
+const argv = require('yargs').argv;
 
 gulp.task('verBump', () => {
-  console.log('hello world from gulp');
+  const getVersion = debug.updateVersion(argv.ver, argv.rel);
+  console.log(getVersion);
 });
