@@ -25,9 +25,9 @@ gulp.task('verBump', () => {
 });
 
 gulp.task('add', () => {
-  gulp.src('*')
+  gulp.src('.')
   .pipe(git.add())
-  .pipe(git.commit('Test Gulp Commit', { emitData: true }))
+  .pipe(git.commit('Test Gulp Commit', { emitData: true, args: '-n' }))
   .on('data', (data) => {
     console.log(data);
   });
