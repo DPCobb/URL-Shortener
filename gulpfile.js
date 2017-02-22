@@ -27,13 +27,13 @@ gulp.task('ver-bump', (cb, err) => {
   cb();
 });
 
-// add the files and create  commit
+// add the files and create commit
 gulp.task('add-commit', ['ver-bump'], (cb) => {
   gulp.src('.', (err) => {
     if (err) throw err;
   })
   .pipe(git.add())
-  .pipe(git.commit('testing async'))
+  .pipe(git.commit('Version Bumped, sending to Release Branch'))
   .on('end', cb);
 });
 
@@ -45,7 +45,14 @@ gulp.task('push', ['ver-bump', 'add-commit'], (cb) => {
   .on('end', cb);
 });
 
-// start tasks
-gulp.task('bump', ['ver-bump', 'add-commit', 'push'], () => {
+// run the tasks
+gulp.task('bump', ['ver-bump', 'add-commit', 'push']);
 
+// extra tasks
+gulp.task('cmt', () => {
+  gulp.src('.', (err) => {
+    if (err) throw err;
+  })
+  .pipe(git.add())
+  .pipe(git.commit(argv.m));
 });
