@@ -23,7 +23,7 @@ gulp.task('ver-bump', (cb) => {
     // write the file
     fs.writeFileSync('package.json', JSON.stringify(newVersion, null, 2));
   });
-  cb(console.log('ver-bump complete'));
+  cb();
 });
 
 // add the files and create  commit
@@ -33,7 +33,7 @@ gulp.task('add-commit', ['ver-bump'], (cb) => {
   })
   .pipe(git.add())
   .pipe(git.commit('gulp bump'));
-  cb(console.log('add-commit complete'));
+  cb();
 });
 
 // push to repo
@@ -41,8 +41,10 @@ gulp.task('push', ['ver-bump', 'add-commit'], (cb) => {
   git.push('origin', 'ver-bump', { args: ' -u' }, (err) => {
     if (err) throw err;
   });
-  cb(console.log('push complete'));
+  cb();
 });
 
 // start tasks
-gulp.task('bump', ['ver-bump', 'add-commit', 'push']);
+gulp.task('bump', ['ver-bump', 'add-commit'], () => {
+
+});
