@@ -45,6 +45,6 @@ gulp.task('push', ['ver-bump', 'add-commit'], (cb) => {
 });
 
 // start tasks
-gulp.task('bump', ['ver-bump', 'add-commit', 'push'], (err) => {
-  if (err) throw err;
+gulp.task('bump', ['ver-bump', 'add-commit', 'push'], () => {
+  
 });
