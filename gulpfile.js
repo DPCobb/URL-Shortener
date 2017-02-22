@@ -11,11 +11,11 @@ const argv = require('yargs').argv;
 const fs = require('fs');
 
 // bump the version
-gulp.task('ver-bump', (cb) => {
+gulp.task('ver-bump', (cb, err) => {
   const getVersion = debug.updateVersion(argv.ver, argv.rel);
   // get and parse package.json
-  fs.readFile('package.json', (err, data) => {
-    if (err) throw err;
+  fs.readFile('package.json', (error, data) => {
+    if (error) throw error;
     const pack = JSON.parse(data);
     const newVersion = pack;
     // change the version number
@@ -23,6 +23,7 @@ gulp.task('ver-bump', (cb) => {
     // write the file
     fs.writeFileSync('package.json', JSON.stringify(newVersion, null, 2));
   });
+  if (err) throw cb(err);
   cb();
 });
 
@@ -32,16 +33,16 @@ gulp.task('add-commit', ['ver-bump'], (cb) => {
     if (err) throw err;
   })
   .pipe(git.add())
-  .pipe(git.commit('maybe async is working'));
-  cb();
+  .pipe(git.commit('testing async'))
+  .on('end', cb);
 });
 
 // push to repo
 gulp.task('push', ['ver-bump', 'add-commit'], (cb) => {
   git.push('origin', 'ver-bump', { args: ' -u' }, (err) => {
     if (err) throw err;
-  });
-  cb();
+  })
+  .on('end', cb);
 });
 
 // start tasks
