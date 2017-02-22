@@ -24,18 +24,19 @@ gulp.task('verBump', () => {
   });
 });
 
-gulp.task('add-commit', () => {
+gulp.task('add-commit', (complete) => {
   gulp.src('.')
   .pipe(git.add())
   .pipe(git.commit('Testing commit and push with bump task'));
+  complete();
 });
 
-gulp.task('push', () => {
+gulp.task('push', ['add-commit'], () => {
   git.push('origin', 'ver-bump', { args: ' -u' }, (err) => {
     if (err) throw err;
   });
 });
 
-gulp.task('bump', ['add-commit'], () => {
-  gulp.task('push');
+gulp.task('bump', ['add-commit', 'push'], () => {
+
 });
