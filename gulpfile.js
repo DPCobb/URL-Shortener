@@ -23,7 +23,7 @@ gulp.task('ver-bump', (cb, err) => {
     // write the file
     fs.writeFileSync('package.json', JSON.stringify(newVersion, null, 2));
   });
-  if (err) throw cb(err);
+  if (err) throw err;
   cb();
 });
 
