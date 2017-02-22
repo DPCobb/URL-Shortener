@@ -27,7 +27,7 @@ gulp.task('verBump', () => {
 gulp.task('add-commit', () => {
   gulp.src('.')
   .pipe(git.add())
-  .pipe(git.commit('test'));
+  .pipe(git.commit('testing push'));
 });
 
 gulp.task('push', ['add-commit'], () => {
