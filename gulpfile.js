@@ -10,6 +10,7 @@ const debug = require('tynydebug');
 const argv = require('yargs').argv;
 const fs = require('fs');
 
+// bump the version
 gulp.task('verBump', () => {
   const getVersion = debug.updateVersion(argv.ver, argv.rel);
   // get and parse package.json
