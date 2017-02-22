@@ -27,10 +27,7 @@ gulp.task('verBump', () => {
 gulp.task('add-commit', () => {
   gulp.src('.')
   .pipe(git.add())
-  .pipe(git.commit('test'))
-  .pipe(git.push('origin', 'ver-bump', { args: ' -u' }, (err) => {
-    if (err) throw err;
-  }));
+  .pipe(git.commit('test'));
 });
 
 gulp.task('push', ['add-commit'], () => {
