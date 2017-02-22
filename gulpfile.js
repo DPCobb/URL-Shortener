@@ -40,7 +40,7 @@ gulp.task('add-commit', ['ver-bump'], (cb) => {
 
 // push to repo
 gulp.task('push', ['ver-bump', 'add-commit'], (cb) => {
-  git.push('origin', 'ver-bump', { args: ' -u' }, (err) => {
+  git.push('origin', 'release', { args: ' -u' }, (err) => {
     if (err) throw err;
   })
   .on('end', cb);
