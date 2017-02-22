@@ -32,7 +32,7 @@ gulp.task('add-commit', ['ver-bump'], (cb) => {
     if (err) throw err;
   })
   .pipe(git.add())
-  .pipe(git.commit('Testing entire git sequence, ver should be 1.1.0'));
+  .pipe(git.commit('gulp bump'));
   cb(console.log('add-commit complete'));
 });
 
