@@ -1,6 +1,6 @@
 {
   "name": "url-shortener",
-  "version": "1.9.0",
+  "version": "1.11.0",
   "description": "A Node URL Shortener",
   "main": "src/server.js",
   "scripts": {
