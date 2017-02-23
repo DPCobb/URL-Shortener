@@ -13,6 +13,7 @@ A node.js url shortener API.
 - [Deployment](#deployment)
 - [Style Guide](#style-guide)
 - [Contributing](#contributing)
+- [Dev Use](#dev-use)
 
 ## Install
 
@@ -445,3 +446,25 @@ the following requirements should be met:
 * If creating a new feature please update the readme.md file with documentation
 including endpoints and examples.
 * Lastly, try to keep the coding style similar to the existing API.
+
+## Dev Use
+This project includes a gulp file for use in development. To use this file you will need the following additional dev dependencies:
+```
+"gulp": "^3.9.1",
+"gulp-git": "^2.0.0",
+"gulp-shell": "^0.6.0"
+```
+### gulp cmt --m='Your Message'
+This will add all changed files and apply a commit with the given message.
+### gulp up --b='Branch'
+This will push the commits up to the branch specified like performing:
+```
+git push -u origin <branch>
+```
+### gulp test
+This will run the unit tests with the following command:
+```
+istanbul cover _mocha
+```
+### gulp bump --ver=#.#.# --rel='Release type'
+This will change your version number in package.json, ver is your current version and rel should be one of the following: major, minor, or patch. This will also git add all files, create a commit with the message 'Version Bumped, sending to Release Branch', and push to the release branch.
